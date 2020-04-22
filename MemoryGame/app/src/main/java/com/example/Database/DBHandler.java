@@ -180,7 +180,7 @@ public class DBHandler extends SQLiteOpenHelper {
     //For multiple results, the result table is being randomized and the first element is selected.
     public Player findHighestPairsOfTwoPlayer(){
         String query = "SELECT name, pairsOf2Wins FROM " + TABLE_PLAYERS + " WHERE "
-                + COLUMN_PAIRSOF3WINS + " = MAX(" + COLUMN_PAIRSOF3WINS + ")"
+                + COLUMN_ONEONONEWINS + " = MAX(" + COLUMN_ONEONONEWINS + ")"
                 + "ORDER BY RANDOM()";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
