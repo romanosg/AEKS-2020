@@ -40,7 +40,12 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -61,11 +66,15 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\res\layout" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\res\drawable" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.example.MemoryGameActivities" />
+      <recent name="com.example.myapplication" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\res\layout" />
     </key>
   </component>
   <component name="RunDashboard">
