@@ -1,0 +1,1 @@
+var CodeMR_ProjectMetrics = {"Project Name":"memory-game-3101-3137", "Number of Highly Problematic Classes":0, "Number of Entities":5, "Number of Problematic Classes":0, "Class Lines of Code":213, "Number of External Packages":3, "Number of Packages":3, "Number of External Entities":8}
