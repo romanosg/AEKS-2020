@@ -10,13 +10,12 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="32dp"
         android:text="@string/memoryGame"
         android:textAlignment="center"
         android:textColor="#F00"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/playGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="80dp"
         android:text="@string/playGame"
         app:layout_constraintBottom_toTopOf="@+id/rulesButton"
@@ -42,22 +42,34 @@
         android:layout_marginStart="80dp"
         android:layout_marginEnd="80dp"
         android:text="@string/rules"
-        app:layout_constraintBottom_toTopOf="@+id/scoresButton"
+        app:layout_constraintBottom_toTopOf="@+id/FindPl"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playGame" />
 
     <Button
-        android:id="@+id/scoresButton"
+        android:id="@+id/findPlayerButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="80dp"
-        android:text="@string/scores"
+        android:text="@string/highscores"
         app:layout_constraintBottom_toTopOf="@+id/quitGameButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FindPl" />
+
+    <Button
+        android:id="@+id/FindPl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:text="@string/findplayer"
+        app:layout_constraintBottom_toTopOf="@+id/findPlayerButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rulesButton" />
 
@@ -67,10 +79,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="80dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/quitGame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scoresButton" />
+        app:layout_constraintTop_toBottomOf="@+id/findPlayerButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
