@@ -5,4 +5,7 @@
     <string name="rules">Rules</string>
     <string name="scores">Scores</string>
     <string name="quitGame">Quit</string>
+    <string name="AISelect">AI</string>
+    <string name="playerID">Player Options</string>
+    <string name="playerNameSelect">Name</string>
 </resources>
