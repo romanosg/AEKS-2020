@@ -1,9 +1,39 @@
 <resources>
-   <string name="app_name">The cocktails app</string>
-   <string name="hello_msg">Hello Android!</string>
-   <string name="menu_settings">Settings</string>
-   <string name="title_activity_main">MainActivity</string>
-   <string name="ingredientsButton">Add Ingredient</string>
-   <string name="cocktailsButton">Add Cocktail</string>
-   <string name="placeHolderButton">Placeholder</string>
+    <string name="app_name">My Application</string>
+    <string name="memoryGame">Memory Game</string>
+    <string name="playGame">Play</string>
+    <string name="rules">Rules</string>
+    <string name="highscores">Highscores</string>
+    <string name="quitGame">Quit</string>
+    <string name="AISelect">AI</string>
+    <string name="playerID">Player Options</string>
+    <string name="playerNameSelect">Name</string>
+    <string name="findplayer">Find Player</string>
+    <string name="mode">Mode</string>
+    <string name="player">Player</string>
+    <string name="wins">Wins</string>
+    <string name="pairsoftwocards">Pairs of two cards</string>
+    <string name="wins1">Wins1</string>
+    <string name="pairsofthreecards">Pairs of three cards</string>
+    <string name="battle">Battle</string>
+    <string name="wins2">Wins2</string>
+    <string name="wins3">Wins3</string>
+    <string name="playersearchinfo">Player Search Info</string>
+    <string name="searchplayer">Search Player</string>
+    <string name="exit">Exit</string>
+    <string name="deleteAllPlayers">Delete All Players</string>
+    <string name="deletePlayer">Delete Player</string>
+    <string name="title_activity_high_scores">HighScores</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="player">Player</string>
+    <string name="player1">Player1</string>
+    <string name="player2">Player2</string>
+    <string name="player3">Player3</string>
 </resources>

@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.memory_game.app.MainActivity">
+        <activity android:name=".Highscores"></activity>
+        <activity android:name=".findPlayerActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
