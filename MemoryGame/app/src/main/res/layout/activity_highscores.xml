@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.MemoryGameActivities.Highscores">
+    tools:context="com.android.MemoryGameActivities.Highscores">
 
     <TextView
         android:id="@+id/highscores2"

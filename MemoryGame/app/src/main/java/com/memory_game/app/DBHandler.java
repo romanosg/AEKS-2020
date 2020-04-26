@@ -3,7 +3,7 @@
  * total wins of each mode they have played. It also supports methods regarding the data management.
  */
 
-package com.android.Database;
+package com.memory_game.app;
 
 import android.content.ContentValues;
 import android.content.Context;
