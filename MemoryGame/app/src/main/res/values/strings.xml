@@ -36,4 +36,9 @@
     <string name="player1">Player1</string>
     <string name="player2">Player2</string>
     <string name="player3">Player3</string>
+    <string name="beginner">Beginner</string>
+    <string name="novice">Novice</string>
+    <string name="expert">Expert</string>
+    <string name="previousButton">Previous Player/Back</string>
+    <string name="nextButton">Next Player/Start Game</string>
 </resources>
