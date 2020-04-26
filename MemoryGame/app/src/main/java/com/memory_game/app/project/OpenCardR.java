@@ -1,7 +1,6 @@
 package com.memory_game.app.project;
 
 import com.memory_game.app.GameManagers.*;
-import com.memory_game.app.AndroidGui;
 
 public class OpenCardR implements Runnable{
 	AndroidGui gui;

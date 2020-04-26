@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.memory_game.app;
+package com.memory_game.app.project;
 
 public final class R {
     public static final class attr {
@@ -93,6 +93,9 @@ public final class R {
         public static final int cocktails=0x7f030001;
         public static final int ingredients=0x7f030002;
         public static final int play=0x7f030003;
+        public static int activity_find_player;
+        public static int activity_highscores;
+        public static int activity_selection_screen;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

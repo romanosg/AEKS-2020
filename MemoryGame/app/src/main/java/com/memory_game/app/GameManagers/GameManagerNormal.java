@@ -7,7 +7,7 @@ package com.memory_game.app.GameManagers;
 
 import java.util.Random;
 import com.memory_game.app.Bots.*;
-import com.memory_game.app.AndroidGui;
+import com.memory_game.app.project.AndroidGui;
 
 /**
  * Αυτή η κλάση ελέγχει τη λογική του παιχνιδιού.

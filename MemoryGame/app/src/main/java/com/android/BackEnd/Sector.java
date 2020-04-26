@@ -1,4 +1,4 @@
-package com.android.MemoryGameActivities;
+package com.android.BackEnd;
 
 public enum Sector {
     BEGINNER,

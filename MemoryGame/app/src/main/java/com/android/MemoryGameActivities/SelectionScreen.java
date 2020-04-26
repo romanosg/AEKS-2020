@@ -8,7 +8,7 @@ import android.widget.CheckBox;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.memory_game.app.R;
+import com.memory_game.app.project.R;
 
 public class SelectionScreen extends AppCompatActivity {
 

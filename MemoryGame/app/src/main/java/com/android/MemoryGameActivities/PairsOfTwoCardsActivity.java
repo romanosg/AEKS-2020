@@ -1,21 +1,15 @@
 package com.android.MemoryGameActivities;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
-import android.view.View;
-import android.content.Intent;
 import android.content.Context;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.memory_game.app.AndroidGui;
+import com.memory_game.app.project.AndroidGui;
 import com.memory_game.app.GameManagers.GameManagerNormal;
-import com.memory_game.app.R;
-import com.memory_game.app.project.*;
+import com.memory_game.app.project.R;
 
 public class PairsOfTwoCardsActivity extends AppCompatActivity {
 

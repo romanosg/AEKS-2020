@@ -1,4 +1,4 @@
-package com.android.MemoryGameActivities;
+package com.android.BackEnd;
 
 public class Learner {
     private boolean isAI;

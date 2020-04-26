@@ -6,8 +6,7 @@
 package com.memory_game.app.Bots;
 
 import com.memory_game.app.GameManagers.*;
-import com.memory_game.app.project.*;
-import com.memory_game.app.AndroidGui;
+import com.memory_game.app.project.AndroidGui;
 
 /**
  * Είναι η sub class που χειρίζεται τις κινήσεις του easy bot.
