@@ -9,15 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.android.MemoryGameActivities.MainActivity"/>
-        <activity android:name="com.android.MemoryGameActivities.SelectionScreen"/>
-        <activity android:name="com.android.MemoryGameActivities.Highscores"/>
+        <activity android:name="com.android.MemoryGameActivities.ModeSelection"></activity>
+        <activity android:name="com.android.MemoryGameActivities.Rules" />
+        <activity android:name="com.android.MemoryGameActivities.MainActivity" />
+        <activity android:name="com.android.MemoryGameActivities.SelectionScreen" />
+        <activity android:name="com.android.MemoryGameActivities.Highscores" />
         <activity android:name="com.android.MemoryGameActivities.findPlayerActivity" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
     </application>
 
 </manifest>
