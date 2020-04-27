@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.memory_game.app.project.AndroidGui;
 import com.memory_game.app.GameManagers.GameManagerNormal;
-import com.memory_game.app.project.R;
+import com.memory_game.app.R;
 
 public class PairsOfTwoCardsActivity extends AppCompatActivity {
 

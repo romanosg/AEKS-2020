@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.memory_game.app.project.R;
+import com.memory_game.app.R;
 
 public class Highscores extends AppCompatActivity {
 
