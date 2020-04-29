@@ -7,11 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d14c3bbc-8594-4174-aab8-57cb42da0c9e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Mode_Sector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Player_Sector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Learner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Sector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Sector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/ModeSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/ModeSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/SelectionScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/SelectionScreen.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587992729336</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Connected the main menu activities with the main menu">
+      <created>1588147435226</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588147435226</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,6 +216,7 @@
     <MESSAGE value="Updated player options screen&#10;Added functionality to checkbox and radiobuttons" />
     <MESSAGE value="Fixed a minor issue&#10;Added some functionality to the SelectionScreen activity" />
     <MESSAGE value="Added rules and mode selection activities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added rules and mode selection activities" />
+    <MESSAGE value="Connected the main menu activities with the main menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connected the main menu activities with the main menu" />
   </component>
 </project>

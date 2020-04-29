@@ -10,14 +10,26 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.android.BackEnd.Learner;
+import com.android.BackEnd.Mode_Sector;
+import com.android.BackEnd.Sector;
 import com.memory_game.app.R;
 
 public class SelectionScreen extends AppCompatActivity {
+    private Learner learner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection_screen);
+        learner = new Learner();
+
+        Bundle extras=getIntent().getExtras();
+
+        if(extras!=null){
+            CharSequence gameMode= (CharSequence) extras.getSerializable("gameMode");
+            CharSequence playerNumber= (CharSequence) extras.getSerializable("playerNumber");
+        }
     }
 
     public void checkBoxClicked(View view){
@@ -34,7 +46,6 @@ public class SelectionScreen extends AppCompatActivity {
             rb3.setClickable(false);
         }
         else{
-            message="Player is human";
             rb1.setClickable(true);
             rb2.setClickable(true);
             rb3.setClickable(true);
@@ -51,12 +62,15 @@ public class SelectionScreen extends AppCompatActivity {
 
         switch(rbid){
             case R.id.radio_beginner:
+                learner.setSector(Sector.BEGINNER);
                 message="Beginner";
                 break;
             case R.id.radio_novice:
+                learner.setSector(Sector.NOVICE);
                 message="Novice";
                 break;
             case R.id.radio_expert:
+                learner.setSector(Sector.EXPERT);
                 message="Expert";
                 break;
         }
