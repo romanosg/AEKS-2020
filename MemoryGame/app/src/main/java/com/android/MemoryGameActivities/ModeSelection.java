@@ -26,6 +26,7 @@ public class ModeSelection extends AppCompatActivity {
         learner = new Learner();
     }
 
+
     public void chooseGameMode(View view){
         RadioGroup modes = findViewById(R.id.mode_group);
         RadioButton rb1=findViewById(R.id.radio_3_players);
@@ -56,6 +57,7 @@ public class ModeSelection extends AppCompatActivity {
         Toast toast= Toast.makeText(this,message,duration);
         toast.show();
     }
+
     public void choosePlayers(View view){
         RadioGroup players = findViewById(R.id.player_group);
         int rbid= players.getCheckedRadioButtonId();
@@ -70,7 +72,7 @@ public class ModeSelection extends AppCompatActivity {
                 learner.setPlayer_sector(Player_Sector.THREE_PLAYERS);
                 message="3 Players";
                 break;
-            case R.id.radio_expert:
+            case R.id.radio_4_players:
                 learner.setPlayer_sector(Player_Sector.FOUR_PLAYERS);
                 message="4 Players";
                 break;
@@ -102,13 +104,14 @@ public class ModeSelection extends AppCompatActivity {
             case R.id.radio_3_players:
                 learner.setPlayer_sector(Player_Sector.THREE_PLAYERS);
                 break;
-            case R.id.radio_expert:
+            case R.id.radio_4_players:
                 learner.setPlayer_sector(Player_Sector.FOUR_PLAYERS);
                 break;
         }
+
         Intent i= new Intent(this, SelectionScreen.class);
-        i.putExtra("gameMode",learner.getMode_sector());
-        i.putExtra("playerNumber",learner.getPlayer_sector());
+        i.putExtra("gameMode","" + learner.getMode_sector());
+        i.putExtra("playerNumber","" + learner.getPlayer_sector());
         startActivity(i);
     }
 }

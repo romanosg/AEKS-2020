@@ -88,16 +88,15 @@
             android:id="@+id/radio_3_players"
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:onClick="chooseGameMode"
-            android:text="@string/threePlayers"
-            />
+            android:onClick="choosePlayers"
+            android:text="@string/threePlayers" />
 
         <RadioButton
             android:id="@+id/radio_4_players"
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:text="@string/fourPlayers"
-            android:onClick="chooseGameMode" />
+            android:onClick="choosePlayers"
+            android:text="@string/fourPlayers" />
     </RadioGroup>
 
     <Button

@@ -32,7 +32,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="player">Player</string>
     <string name="player1">Player1</string>
     <string name="player2">Player2</string>
     <string name="player3">Player3</string>
@@ -43,7 +42,7 @@
     <string name="nextButton">Next Player/Start Game</string>
     <string name="rulesTitle">Rules</string>
     <string name="pairOf2Rules"> Pairs Of 2: A player must find pairs of identical cards in a grid of 28 cards.
-    If he finds a pair, he gets a point and gets to play again.\n However if he doesn't find one, it's the opponent's turn.
+    If he finds a pair, he gets a point and gets to play again. However if he doesn\'t find one, it\'s the opponent\'s turn.
     This gamemode supports up to 4 players which could be AI or human entities.</string>
     <string name="pairOf3Rules">Pairs Of 3: The rules are basically the same as the rules from the "Pairs of 2 Mode", but with the exception that the player has to find three identical cards in a grid of 28 cards. </string>
     <string name="BattleRules">Battle: Two players battle against each other in a game of Pairs of 2. Each player has a grid of 24 cards, and has to find identical pairs. </string>

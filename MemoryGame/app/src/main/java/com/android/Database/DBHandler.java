@@ -5,7 +5,9 @@
 
 package com.android.Database;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -18,7 +20,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_PAIRSOF2WINS = "pairsOf2Wins";
     public static final String COLUMN_PAIRSOF3WINS = "pairsOf3Wins";
-    public static final String COLUMN_ONEONONEWINS = "oneOnOneWins";
+    public static final String COLUMN_BATTLEWINS = "battleWins";
 
     //constructor of the database
     public DBHandler(Context context){ super(context, DATABASE_NAME, null, 1);}
@@ -29,7 +31,7 @@ public class DBHandler extends SQLiteOpenHelper {
         String CREATE_PLAYERS_TABLE = "CREATE TABLE " + TABLE_PLAYERS + "(" + COLUMN_ID +
                 " INTEGER PRIMARY KEY," + COLUMN_NAME + " TEXT,"
                 + COLUMN_PAIRSOF2WINS + " INTEGER," + COLUMN_PAIRSOF3WINS + " INTEGER,"
-                + COLUMN_ONEONONEWINS + " INTEGER" + ")";
+                + COLUMN_BATTLEWINS + " INTEGER" + ")";
 
         db.execSQL(CREATE_PLAYERS_TABLE);
     }
@@ -47,57 +49,57 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    /*
+
     //method that creates a new row of data about a new player
     public void addNewPlayer(Player player) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, player.getName());
         values.put(COLUMN_PAIRSOF2WINS, 0);
         values.put(COLUMN_PAIRSOF3WINS, 0);
-        values.put(COLUMN_ONEONONEWINS, 0);
+        values.put(COLUMN_BATTLEWINS, 0);
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_PLAYERS, null, values);
         db.close();
     }
-     */
 
-    /*
+
+
     //method that creates a row of fixed data about an imaginary player for experimentation.
     public void addPlayer(String name, int num1, int num2, int num3) {
         ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, name;
+        values.put(COLUMN_NAME, name);
         values.put(COLUMN_PAIRSOF2WINS, num1);
         values.put(COLUMN_PAIRSOF3WINS, num2);
-        values.put(COLUMN_ONEONONEWINS, num3);
+        values.put(COLUMN_BATTLEWINS, num3);
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert(TABLE_PLAYERS, null, values);
         db.close();
     }
-     */
 
-    /*
+
+
     //method that finds the player data based on name if they exist. If they don't, it returns null.
     public Player findPlayer(String playerName) {
         String query = "SELECT * FROM " + TABLE_PLAYERS + " WHERE " + COLUMN_NAME + " = '"
                 + playerName + "'";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        Player player = new Player();
+        Player player = new Player("");
         if (cursor.moveToFirst()) {
             cursor.moveToFirst();
             player.setName(cursor.getString(1));
-            player.setPairsOfTwoWins(Integer.parseInt(cursor.getString(2)));
-            player.setPairsOfThreeWins(Integer.parseInt(cursor.getString(3)));
-            player.setOneOnOne(Integer.parseInt(cursor.getString(4)));
+            player.setPairsOf2Wins(Integer.parseInt(cursor.getString(2)));
+            player.setPairsOf3Wins(Integer.parseInt(cursor.getString(3)));
+            player.setBattleWins(Integer.parseInt(cursor.getString(4)));
             cursor.close();
         }
         else { player = null; }
         db.close();
         return player;
         }
-     */
 
-    /*
+
+
     //methods that deletes the data of a player based on the name
     public boolean deletePlayer(String playerName) {
         boolean result = false;
@@ -105,9 +107,9 @@ public class DBHandler extends SQLiteOpenHelper {
                 + playerName + "'";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        Player player = new Player();
+        Player player = new Player("");
         if (cursor.moveToFirst()) {
-            player.setName(Integer.parseInt(cursor.getString(0)));
+            player.setName(cursor.getString(1));
             db.delete(TABLE_PLAYERS, COLUMN_NAME + " = ?", new String[] { String.valueOf(player.getName()) });
             cursor.close();
             result = true;
@@ -115,36 +117,36 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
         return result;
     }
-    */
 
-    /*
+
+
     //method that updates the data of the mentioned player in the player table
     public void updateData(Player player){
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, player.getName());
-        values.put(COLUMN_PAIRSOF2WINS, player.getPairsOfTwoWins());
-        values.put(COLUMN_PAIRSOF3WINS, player.getPairsOfThreeWins());
-        values.put(COLUMN_ONEONONEWINS, player.getOneOnOneWins());
+        values.put(COLUMN_PAIRSOF2WINS, player.getPairsOf2Wins());
+        values.put(COLUMN_PAIRSOF3WINS, player.getPairsOf3Wins());
+        values.put(COLUMN_BATTLEWINS, player.getBattleWins());
         SQLiteDatabase db = this.getWritableDatabase();
         db.update(TABLE_PLAYERS, values, COLUMN_NAME + " = ?", new String[] {player.getName()});
         db.close();
     }
-     */
 
-    /*
+
+
     //method that finds the players with the highest pairs of 2 wins.
     //For multiple results, the result table is being randomized and the first element is selected.
-    public Player findHighestPairsOfTwoPlayer(){
+    public Player findHighestPairsOfTwoWinsPlayer(){
             String query = "SELECT name, pairsOf2Wins FROM " + TABLE_PLAYERS + " WHERE "
                     + COLUMN_PAIRSOF2WINS + " = MAX(" + COLUMN_PAIRSOF2WINS + ")"
                     + "ORDER BY RANDOM()";
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(query, null);
-            Player player = new Player();
+            Player player = new Player("");
             if (cursor.moveToFirst()) {
                 cursor.moveToFirst();
-                player.setName(cursor.getString(1));
-                player.setPairsOfTwoWins(Integer.parseInt(cursor.getString(2)));
+                player.setName(cursor.getString(0));
+                player.setPairsOf2Wins(Integer.parseInt(cursor.getString(1)));
                 cursor.close();
             }
             else { player = null; }
@@ -154,44 +156,44 @@ public class DBHandler extends SQLiteOpenHelper {
 
     //method that finds the players with the highest pairs of 3 wins.
     //For multiple results, the result table is being randomized and the first element is selected.
-    public Player findHighestPairsOfTwoPlayer(){
+    public Player findHighestPairsOfThreeWinsPlayer(){
         String query = "SELECT name, pairsOf2Wins FROM " + TABLE_PLAYERS + " WHERE "
                 + COLUMN_PAIRSOF3WINS + " = MAX(" + COLUMN_PAIRSOF3WINS + ")"
                 + "ORDER BY RANDOM()";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        Player player = new Player();
+        Player player = new Player("");
         if (cursor.moveToFirst()) {
             cursor.moveToFirst();
-            player.setName(cursor.getString(1));
-            player.setPairsOfThreeWins(Integer.parseInt(cursor.getString(3)));
+            player.setName(cursor.getString(0));
+            player.setPairsOf3Wins(Integer.parseInt(cursor.getString(1)));
             cursor.close();
         }
         else { player = null; }
         db.close();
         return player;
     }
-    */
 
-    /*
+
+
     //method that finds the players with the highest one on one wins.
     //For multiple results, the result table is being randomized and the first element is selected.
-    public Player findHighestPairsOfTwoPlayer(){
+    public Player findHighestBattleWinsPlayer(){
         String query = "SELECT name, pairsOf2Wins FROM " + TABLE_PLAYERS + " WHERE "
-                + COLUMN_ONEONONEWINS + " = MAX(" + COLUMN_ONEONONEWINS + ")"
+                + COLUMN_BATTLEWINS + " = MAX(" + COLUMN_BATTLEWINS + ")"
                 + "ORDER BY RANDOM()";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        Player player = new Player();
+        Player player = new Player("");
         if (cursor.moveToFirst()) {
             cursor.moveToFirst();
-            player.setName(cursor.getString(1));
-            player.setOneOnOneWins(Integer.parseInt(cursor.getString(4)));
+            player.setName(cursor.getString(0));
+            player.setBattleWins(Integer.parseInt(cursor.getString(1)));
             cursor.close();
         }
         else { player = null; }
         db.close();
         return player;
     }
-     */
+
 }
