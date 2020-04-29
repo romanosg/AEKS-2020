@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d14c3bbc-8594-4174-aab8-57cb42da0c9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Mode_Sector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Player_Sector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Learner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Sector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Sector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/ModeSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/ModeSelection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/SelectionScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/SelectionScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_selection_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_selection_screen.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -195,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588147435226</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated some BackEnd Classes&#10;Added two more Sectors for radio-button usability&#10;&#10;Connected the modeSelection and the SelectionScreen activities">
+      <created>1588152646213</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588152646213</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +219,7 @@
     <MESSAGE value="Fixed a minor issue&#10;Added some functionality to the SelectionScreen activity" />
     <MESSAGE value="Added rules and mode selection activities" />
     <MESSAGE value="Connected the main menu activities with the main menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connected the main menu activities with the main menu" />
+    <MESSAGE value="Updated some BackEnd Classes&#10;Added two more Sectors for radio-button usability&#10;&#10;Connected the modeSelection and the SelectionScreen activities" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated some BackEnd Classes&#10;Added two more Sectors for radio-button usability&#10;&#10;Connected the modeSelection and the SelectionScreen activities" />
   </component>
 </project>

@@ -79,4 +79,10 @@ public class SelectionScreen extends AppCompatActivity {
         toast.show();
 
     }
+    public void previousActivity(View view){
+        //code goes here
+    }
+    public void nextActivity(View view){
+        //code goes here
+    }
 }
