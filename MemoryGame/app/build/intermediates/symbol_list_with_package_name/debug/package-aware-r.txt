@@ -1618,6 +1618,7 @@ id garnishSpinner
 id ghost_view
 id ghost_view_holder
 id glassSpinner
+id goToSelectionScreen
 id gone
 id group_divider
 id groups

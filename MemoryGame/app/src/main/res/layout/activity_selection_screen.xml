@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
-        android:text="@string/playerID"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
