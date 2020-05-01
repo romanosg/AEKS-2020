@@ -114,4 +114,8 @@ public class ModeSelection extends AppCompatActivity {
         i.putExtra("playerNumber","" + learner.getPlayer_sector());
         startActivity(i);
     }
+    public void goToMainMenu(View view){
+        Intent i=new Intent(this,MainActivity.class);
+        startActivity(i);
+    }
 }
