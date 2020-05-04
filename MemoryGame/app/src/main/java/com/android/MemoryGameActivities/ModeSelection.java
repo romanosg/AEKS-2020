@@ -115,7 +115,6 @@ public class ModeSelection extends AppCompatActivity {
         startActivity(i);
     }
     public void goToMainMenu(View view){
-        Intent i=new Intent(this,MainActivity.class);
-        startActivity(i);
+        onBackPressed();
     }
 }

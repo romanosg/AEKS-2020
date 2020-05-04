@@ -99,8 +99,7 @@ public class SelectionScreen extends AppCompatActivity {
     }
     public void previousActivity(View view){
         if(currentPlayer==1){
-            Intent i= new Intent(this,ModeSelection.class);
-            startActivity(i);
+            onBackPressed();
         } else{
             EditText playerName= findViewById(R.id.playerName);
             CheckBox AICheck=findViewById(R.id.AICheckBox);

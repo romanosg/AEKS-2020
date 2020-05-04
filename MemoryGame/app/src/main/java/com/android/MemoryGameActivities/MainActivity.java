@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.util.Log;
 import android.view.View;
 
 import com.memory_game.app.R;
@@ -26,13 +28,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void highScoresActivity(View view){
-        Intent i = new Intent(this,Highscores.class);
+        Intent i = new Intent(this, Highscores.class);
         startActivity(i);
     }
     public void findPlayerActivity(View view){
         Intent i = new Intent(this,findPlayerActivity.class);
         startActivity(i);
-
     }
 
     public void exitApplication(View view){

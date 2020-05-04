@@ -56,7 +56,9 @@
     <string name="threePlayers">3 Players</string>
     <string name="fourPlayers">4 Players</string>
     <string name="mainMenu">Back</string>
-
+    <string name="pairsof_3_cards">pairsof 3 cards</string>
+    <string name="pairs_of_2_cards">Pairs of 2 cards</string>
+    <string name="pairs_of_3_cards">Pairs of 3 cards</string>
 
 
 </resources>

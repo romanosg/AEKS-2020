@@ -1,7 +1,7 @@
-#Thu Apr 30 12:06:45 EEST 2020
-base.0=C\:\\Users\\GEORGE\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Mon May 04 20:01:55 EEST 2020
+base.0=C\:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\GEORGE\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=C\:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

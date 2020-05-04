@@ -1592,7 +1592,6 @@ id dimensions
 id direct
 id disableHome
 id dropdown_menu
-id editText2
 id edit_query
 id end
 id enterAlways
@@ -1618,6 +1617,7 @@ id garnishSpinner
 id ghost_view
 id ghost_view_holder
 id glassSpinner
+id goToMenu
 id goToSelectionScreen
 id gone
 id group_divider
@@ -1722,6 +1722,7 @@ id playerName
 id playerOptions
 id playerSearchInfo
 id playerSelection
+id playerTextView
 id player_group
 id previousButton
 id progress_circular
@@ -2033,6 +2034,7 @@ string hello_second_fragment
 string hide_bottom_view_on_scroll_behavior
 string highscores
 string icon_content_description
+string mainMenu
 string memoryGame
 string mode
 string mtrl_badge_numberless_content_description
@@ -2078,6 +2080,9 @@ string pOf2
 string pOf3
 string pairOf2Rules
 string pairOf3Rules
+string pairs_of_2_cards
+string pairs_of_3_cards
+string pairsof_3_cards
 string pairsofthreecards
 string pairsoftwocards
 string password_toggle_content_description
