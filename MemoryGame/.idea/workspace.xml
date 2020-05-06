@@ -10,13 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d14c3bbc-8594-4174-aab8-57cb42da0c9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/android/BackEnd/Learner.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/com/android/BackEnd/Learner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/android/BackEnd/Learner.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/com/android/BackEnd/Learner.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Learner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Mode_Sector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Player_Sector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/Database/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/Database/DBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/ModeSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/ModeSelection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/SelectionScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/SelectionScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mode_selection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mode_selection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +29,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_R" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -236,6 +241,7 @@
     <MESSAGE value="Connected the main menu activities with the main menu" />
     <MESSAGE value="Updated some BackEnd Classes&#10;Added two more Sectors for radio-button usability&#10;&#10;Connected the modeSelection and the SelectionScreen activities" />
     <MESSAGE value="Updated the design of Mode Selection.&#10;Added some functionality to the Selection Screen buttons&#10;Fixed RadioButtons and relation to AI checkbox." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the design of Mode Selection.&#10;Added some functionality to the Selection Screen buttons&#10;Fixed RadioButtons and relation to AI checkbox." />
+    <MESSAGE value="Implemented DB in Selection Screen&#10;Changed the Mode Selection Screen&#10;Removed Player_Sector and Mode_Sector" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented DB in Selection Screen&#10;Changed the Mode Selection Screen&#10;Removed Player_Sector and Mode_Sector" />
   </component>
 </project>

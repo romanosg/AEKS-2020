@@ -6,121 +6,73 @@
     android:layout_height="match_parent"
     tools:context="com.android.MemoryGameActivities.ModeSelection">
 
+
     <TextView
         android:id="@+id/modeSelection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:text="@string/selectMode"
         android:textAlignment="center"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/mode_group"
+        app:layout_constraintBottom_toTopOf="@id/radio_po2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
-
-    <RadioGroup
-        android:id="@+id/mode_group"
-        android:checkedButton="@id/radio_po2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/modeSelection"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/playerSelection">
-
-        <RadioButton
-            android:id="@+id/radio_po2"
-            android:layout_width="116dp"
-            android:layout_height="match_parent"
-            android:onClick="chooseGameMode"
-            android:text="@string/pOf2" />
-
-        <RadioButton
-            android:id="@+id/radio_po3"
-            android:layout_width="116dp"
-            android:layout_height="match_parent"
-            android:onClick="chooseGameMode"
-            android:text="@string/pOf3" />
-
-        <RadioButton
-            android:id="@+id/radio_battle"
-            android:layout_width="116dp"
-            android:layout_height="match_parent"
-            android:text="@string/battle1v1"
-            android:onClick="chooseGameMode" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/playerSelection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/selectPlayers"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/player_group"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mode_group" />
-
-    <RadioGroup
-        android:id="@+id/player_group"
-        android:checkedButton="@id/radio_2_players"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/playerSelection"
-        app:layout_constraintBottom_toTopOf="@id/goToSelectionScreen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <RadioButton
-            android:id="@+id/radio_2_players"
-            android:layout_width="116dp"
-            android:layout_height="match_parent"
-            android:onClick="choosePlayers"
-            android:text="@string/twoPlayers" />
-
-        <RadioButton
-            android:id="@+id/radio_3_players"
-            android:layout_width="116dp"
-            android:layout_height="match_parent"
-            android:onClick="choosePlayers"
-            android:text="@string/threePlayers" />
-
-        <RadioButton
-            android:id="@+id/radio_4_players"
-            android:layout_width="116dp"
-            android:layout_height="match_parent"
-            android:onClick="choosePlayers"
-            android:text="@string/fourPlayers" />
-    </RadioGroup>
+        />
 
     <Button
-        android:id="@+id/goToSelectionScreen"
-        android:layout_width="wrap_content"
+        android:id="@+id/radio_po2"
+        android:layout_width="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
         android:layout_height="wrap_content"
-        android:onClick="submitSelections"
-        android:text="@string/playerOptions"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="po2SelectionScreen"
+        android:text="@string/pOf2"
+        app:layout_constraintBottom_toTopOf="@id/radio_po3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/goToMenu"
-        app:layout_constraintTop_toBottomOf="@id/player_group" />
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/modeSelection" />
+
+    <Button
+        android:id="@+id/radio_po3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_po2"
+        app:layout_constraintBottom_toTopOf="@id/radio_battle"
+        android:onClick="po3SelectionScreen"
+        android:text="@string/pOf3" />
+
+    <Button
+        android:id="@+id/radio_battle"
+        android:layout_width="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_height="wrap_content"
+        android:onClick="battleSelectionScreen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_po3"
+        app:layout_constraintBottom_toTopOf="@id/goToMenu"
+        android:text="@string/battle1v1" />
+
 
     <Button
         android:id="@+id/goToMenu"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
         android:text="@string/mainMenu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/goToSelectionScreen"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/player_group"
+        app:layout_constraintTop_toBottomOf="@id/radio_battle"
         app:layout_constraintVertical_bias="0.511"
         android:onClick="goToMainMenu"/>
 

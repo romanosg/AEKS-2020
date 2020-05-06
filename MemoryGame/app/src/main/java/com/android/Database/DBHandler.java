@@ -55,9 +55,9 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     //method that creates a new row of data about a new player
-    public void addNewPlayer(Player player) {
+    public void addNewPlayer(String name) {
         ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, player.getName());
+        values.put(COLUMN_NAME, name);
         values.put(COLUMN_PAIRSOF2WINS, 0);
         values.put(COLUMN_PAIRSOF3WINS, 0);
         values.put(COLUMN_BATTLEWINS, 0);
