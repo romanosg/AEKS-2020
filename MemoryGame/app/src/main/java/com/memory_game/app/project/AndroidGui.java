@@ -1,12 +1,19 @@
-package com.memory_game.app.project;
+package com.memory_game.app;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 import android.view.View;
+import android.content.Intent;
+import android.content.Context;
+import com.memory_game.app.R;
 import android.util.Log;
 
 import com.memory_game.app.GameManagers.GameManagerNormal;
+import com.memory_game.app.GameManagers.GameManagerMod4;
+import com.memory_game.app.project.*;
 
 public class AndroidGui{
 
@@ -16,12 +23,16 @@ TextView[] labelsArray;
 int num_buttons;
 Button[] buttonsArray;
 Activity a;
+boolean battle;
+char open_card;
 
-   public AndroidGui(TextView[] labelsArray, int num_buttons, Button[] buttonsArray, Activity a){
+   public AndroidGui(TextView[] labelsArray, int num_buttons, Button[] buttonsArray, Activity a, boolean battle, char open_card){
        this.labelsArray = labelsArray;
        this.num_buttons = num_buttons;
        this.buttonsArray = buttonsArray;
        this.a = a;
+       this.battle = battle;
+       this.open_card = open_card;
        for(int i =0;i<num_buttons;i++){
     		this.buttonsArray[i].setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -35,8 +46,16 @@ Activity a;
 
 protected void handleEvent(View v) {
         int id = v.getId();
-    	this.openCard(id-R.id.card01);//Integer.parseInt(s));
-    	this.st(new Thread(new OpenCardR(this, id-R.id.card01,'n')));
+    	if(!battle){
+            this.openCard(id-R.id.card01);//Integer.parseInt(s));
+    	    this.st(new Thread(new OpenCardR(this, id-R.id.card01, open_card)));
+        }
+        else{
+            int offset=0;
+            if(id-R.id.b_card01>=14)offset=2;
+            this.openCard(id-R.id.b_card01-offset);//Integer.parseInt(s));
+    	    this.st(new Thread(new OpenCardR(this, id-R.id.b_card01-offset, open_card)));
+        }
         //a.runOnUiThread(new OpenCardR(this, id-R.id.card01,'n'));
     }
 
@@ -45,8 +64,6 @@ protected void handleEvent(View v) {
 
     @Override
     public void run() {
-Log.v("degbugging", ""+buttonsArray[cardNumber]);
-Log.v("degbugging", ""+GameManagerNormal.mainTable[cardNumber]);
 buttonsArray[cardNumber].setBackgroundResource(R.drawable.i0+GameManagerNormal.mainTable[cardNumber]);
 
     }
@@ -143,5 +160,26 @@ buttonsArray[x].performClick();
         buttonsArray[x1] = null;
         buttonsArray[x2] = null;
     }
-    
+
+    public void  rmButtons(int x1, int x2, int x3){
+        buttonsArray[x1] = null;
+        buttonsArray[x2] = null;
+        buttonsArray[x3] = null;
+    }
+
+    public void closeP2buttons(){
+        for(int i=num_buttons/2;i < num_buttons;i++)if(buttonsArray[i]!=null)unClicableButtons(i);
+    }
+
+    public void closeP1buttons(){
+        for(int i=0;i < num_buttons/2;i++)if(buttonsArray[i]!=null)unClicableButtons(i);
+    }
+ 
+    public void openP2buttons(){
+        for(int i=num_buttons/2;i < num_buttons;i++)if(buttonsArray[i]!=null)clicableButtons(i);
+    }
+
+    public void openP1buttons(){
+        for(int i=0;i < num_buttons/2;i++)if(buttonsArray[i]!=null)clicableButtons(i);
+    }   
 }

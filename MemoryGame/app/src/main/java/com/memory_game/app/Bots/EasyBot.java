@@ -6,7 +6,8 @@
 package com.memory_game.app.Bots;
 
 import com.memory_game.app.GameManagers.*;
-import com.memory_game.app.project.AndroidGui;
+import com.memory_game.app.project.*;
+import com.memory_game.app.AndroidGui;
 
 /**
  * Είναι η sub class που χειρίζεται τις κινήσεις του easy bot.
@@ -29,6 +30,7 @@ public class EasyBot extends Bot{
 			x = r.nextInt(GameManagerNormal.numberOfCards);
 			if(x!=opened && x1[x]==0)break;
 		}
+                gui.clicableButtons(x);
 		gui.clickButton(x);
     	opened = x;
     }

@@ -6,7 +6,8 @@
 package com.memory_game.app.Bots;
 
 import com.memory_game.app.GameManagers.*;
-import com.memory_game.app.project.AndroidGui;
+import com.memory_game.app.project.*;
+import com.memory_game.app.AndroidGui;
 
 /**
  * Είναι η sub class που χειρίζεται τις κινήσεις του normal bot.
@@ -62,6 +63,7 @@ public class NormalBot extends Bot{
 	public void OpenCardFirst(AndroidGui gui) {
 		checkForPairVar = checkForPair();
 		if(checkForPairVar){
+                        gui.clicableButtons(openCard1);
 			gui.clickButton(openCard1);
 		}
 		else {
@@ -69,6 +71,7 @@ public class NormalBot extends Bot{
 			x = r.nextInt(GameManagerNormal.numberOfCards);
 			if(x!=opened && x1[x]==0  && checkX())break;
 		}
+                gui.clicableButtons(x);
 		gui.clickButton(x);
 		saveHalf();
     	opened = x;	
@@ -77,6 +80,7 @@ public class NormalBot extends Bot{
 	
 	public void OpenCardSecond(AndroidGui gui) {
 		if(checkForPairVar){
+                        gui.clicableButtons(openCard2);
 			gui.clickButton(openCard2);
 		}
 		else if(checkCard())gui.clickButton(checkedCard);
@@ -85,6 +89,7 @@ public class NormalBot extends Bot{
 			x = r.nextInt(GameManagerNormal.numberOfCards);
 			if(x!=opened && x1[x]==0)break;
 		}
+                gui.clicableButtons(x);
 		gui.clickButton(x);
     	opened = x;	
 	}

@@ -7,7 +7,7 @@ package com.memory_game.app.GameManagers;
 
 import java.util.Random;
 import com.memory_game.app.Bots.*;
-import com.memory_game.app.project.AndroidGui;
+import com.memory_game.app.AndroidGui;
 
 /**
  * Αυτή η κλάση ελέγχει τη λογική του παιχνιδιού.
@@ -75,19 +75,6 @@ public class GameManagerNormal extends GameManager {
     			case 'h':bot[i] = new HardBot();break;
     			}
     		}
-    		/*switch(botLvl){
-    		case 'e':easyBot = new EasyBot[numberOfBots];
-    		for(int y=0;y<numberOfBots;y++){
-    			easyBot[y] = new EasyBot();
-    		}break;
-    		case 'n': normalBot = new NormalBot[numberOfBots];
-    		for(int y=0;y<numberOfBots;y++){
-    			normalBot[y] = new NormalBot();
-    		}break;
-    		case 'h':hardBot = new HardBot[numberOfBots];
-    		for(int y=0;y<numberOfBots;y++){
-    			hardBot[y] = new HardBot();
-    		}break;*/
     	}
     	playersScore = new int[numberOfPlayers];
 		for(int i=0;i<numberOfPlayers;i++)playersScore[i]=0;
@@ -106,16 +93,10 @@ public class GameManagerNormal extends GameManager {
        		System.out.println(""+mainTable[x]+"  "+mainTable[x2]);
     		mainTable[x]=i;
     		mainTable[x2]=i;
-    	}
-    	/*for(int i=0;i<13;i++){
-    		mainTable[i]=i;
-    		mainTable[i+13]=i;
-    	}*/
-		
+    	}	
     }
 
     public static void OpenCard(AndroidGui gui, int cardNumber){
-    	//gui.openCard(cardNumber);
     	if(cardNumber==-1){
     		moves++;
     		counter=0;
