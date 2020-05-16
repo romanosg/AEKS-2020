@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.memory_game.app.Bots;
+package com.android.BackEnd.Bots;
 
 import java.util.Random;
-import com.memory_game.app.GameManagers.*;
+import com.android.BackEnd.GameManagers.*;
 
 /**
  * Είναι η master class που χειρίζεται τις κινήσεις του AI bot.

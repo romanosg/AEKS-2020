@@ -1,20 +1,15 @@
-package com.memory_game.app;
+package com.android.MemoryGameActivities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
-import android.view.View;
-import android.content.Intent;
 import android.content.Context;
-import android.util.Log;
 
-import com.memory_game.app.GameManagers.GameManagerNormal;
-import com.memory_game.app.GameManagers.GameManagerMod4;
-import com.memory_game.app.GameManagers.GameManagerMod8;
-import com.memory_game.app.project.*;
-import com.memory_game.app.project.AndroidGui;
+import com.android.BackEnd.GameManagers.GameManagerNormal;
+import com.android.BackEnd.GameManagers.GameManagerMod4;
+import com.memory_game.app.R;
+import com.android.BackEnd.AndroidGui;
 
 
 public class NormalActivity extends Activity {

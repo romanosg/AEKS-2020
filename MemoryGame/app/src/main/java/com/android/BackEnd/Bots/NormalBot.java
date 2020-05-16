@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.memory_game.app.Bots;
+package com.android.BackEnd.Bots;
 
-import com.memory_game.app.GameManagers.*;
-import com.memory_game.app.project.*;
-import com.memory_game.app.project.AndroidGui;
+import com.android.BackEnd.GameManagers.*;
+import com.android.BackEnd.AndroidGui;
 
 /**
  * Είναι η sub class που χειρίζεται τις κινήσεις του normal bot.

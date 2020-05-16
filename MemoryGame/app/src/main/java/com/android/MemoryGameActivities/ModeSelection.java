@@ -21,7 +21,7 @@ public class ModeSelection extends AppCompatActivity {
 
     public void po2SelectionScreen(View view){
         Intent i=new Intent(this,SelectionScreen.class);
-        i.putExtra("gameMode",1);
+        i.putExtra("gameMode", 1);
         startActivity(i);
     }
     public void po3SelectionScreen(View view){
@@ -32,6 +32,7 @@ public class ModeSelection extends AppCompatActivity {
     public void battleSelectionScreen(View view){
         Intent i=new Intent(this,SelectionScreen.class);
         i.putExtra("gameMode",3);
+
         startActivity(i);
     }
 

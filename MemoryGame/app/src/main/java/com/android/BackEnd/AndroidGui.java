@@ -1,19 +1,13 @@
-package com.memory_game.app.project;
+package com.android.BackEnd;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
 import android.view.View;
-import android.content.Intent;
-import android.content.Context;
-import com.memory_game.app.R;
-import android.util.Log;
 
-import com.memory_game.app.GameManagers.GameManagerNormal;
-import com.memory_game.app.GameManagers.GameManagerMod4;
-import com.memory_game.app.project.*;
+import com.memory_game.app.R;
+
+import com.android.BackEnd.GameManagers.GameManagerNormal;
 
 public class AndroidGui{
 

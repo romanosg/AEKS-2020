@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.content.Context;
 import android.util.Log;
 
-import com.memory_game.app.GameManagers.GameManagerNormal;
+import com.android.BackEnd.GameManagers.GameManagerNormal;
 import com.memory_game.app.project.*;
 
 public class MainActivity extends Activity {

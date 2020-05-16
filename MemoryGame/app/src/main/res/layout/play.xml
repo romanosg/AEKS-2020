@@ -1,61 +1,51 @@
-<ScrollView
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="fill_parent"
-  android:layout_height="fill_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent"
-   android:orientation="vertical">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent"
-   android:orientation="vertical"
-   android:gravity="center_horizontal">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent"
-   android:orientation="vertical"
-   android:gravity="center"
-   android:id="@+id/playIngredientsLayout">
-    
-    <TextView
-android:id="@+id/playScore"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:weightSum="6">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="4">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:id="@+id/title_text1"/>
+    </LinearLayout>
 
-    <TextView
-android:id="@+id/playCocktailName"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:weightSum="6"
+        android:id="@+id/linear_layout">
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="2"
+            android:id="@+id/choice01"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="2"
+            android:id="@+id/choice02"/>
 
-<Spinner
-    android:id="@+id/playMethodSpinner"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
-	
-<Spinner
-    android:id="@+id/playGlassSpinner"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/choice03"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="2" />
 
-<Spinner
-    android:id="@+id/playGarnishSpinner"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" />
 
-<Button
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Add cocktail"
-      android:id="@+id/playAnswer"/>
-   
-   <Button
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Add Ingredient"
-      android:id="@+id/playAddIngredientsButton"/>
-  
+    </LinearLayout>
+
 </LinearLayout>
-</LinearLayout>
-</LinearLayout>
-</ScrollView>

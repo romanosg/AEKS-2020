@@ -28,6 +28,10 @@
         "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\drawable\\i19.jpg"
     },
     {
+        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\layout_normal.xml.flat",
+        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\layout\\normal.xml"
+    },
+    {
         "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
@@ -60,12 +64,12 @@
         "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable_i4.jpg.flat",
-        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\drawable\\i4.jpg"
+        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\layout_cards3.xml.flat",
+        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\layout\\cards3.xml"
     },
     {
-        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\layout_ingredients.xml.flat",
-        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\layout\\ingredients.xml"
+        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable_i4.jpg.flat",
+        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\drawable\\i4.jpg"
     },
     {
         "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable_back_cover.jpg.flat",
@@ -128,12 +132,12 @@
         "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable_i3.jpg.flat",
-        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\drawable\\i3.jpg"
-    },
-    {
         "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_rules.xml.flat",
         "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\layout\\activity_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable_i3.jpg.flat",
+        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\drawable\\i3.jpg"
     },
     {
         "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable_i7.jpg.flat",
@@ -188,12 +192,12 @@
         "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\drawable\\i11.jpg"
     },
     {
-        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\layout_cocktails.xml.flat",
-        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\layout\\cocktails.xml"
-    },
-    {
         "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\layout_battle.xml.flat",
+        "source": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\src\\main\\res\\layout\\battle.xml"
     },
     {
         "merged": "C:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\res\\merged\\debug\\drawable_i6.jpg.flat",

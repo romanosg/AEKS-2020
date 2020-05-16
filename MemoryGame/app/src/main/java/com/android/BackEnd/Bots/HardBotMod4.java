@@ -1,8 +1,7 @@
-package com.memory_game.app.Bots;
+package com.android.BackEnd.Bots;
 
-import com.memory_game.app.GameManagers.*;
-import com.memory_game.app.project.*;
-import com.memory_game.app.project.AndroidGui;
+import com.android.BackEnd.GameManagers.*;
+import com.android.BackEnd.AndroidGui;
 
 
 public class HardBotMod4 extends HardBot{

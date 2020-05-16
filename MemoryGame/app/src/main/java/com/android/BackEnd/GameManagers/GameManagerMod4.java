@@ -1,7 +1,7 @@
-package com.memory_game.app.GameManagers;
+package com.android.BackEnd.GameManagers;
 import java.util.Random;
-import com.memory_game.app.Bots.*;
-import com.memory_game.app.project.AndroidGui;
+import com.android.BackEnd.Bots.*;
+import com.android.BackEnd.AndroidGui;
 
 //anoigoun 3 kartes
 public class GameManagerMod4 extends GameManagerNormal{
