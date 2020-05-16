@@ -25,6 +25,7 @@ Button[] buttonsArray;
 Activity a;
 boolean battle;
 char open_card;
+boolean normal;
 
    public AndroidGui(TextView[] labelsArray, int num_buttons, Button[] buttonsArray, Activity a, boolean battle, char open_card, boolean normal){
        this.labelsArray = labelsArray;
@@ -33,6 +34,7 @@ char open_card;
        this.a = a;
        this.battle = battle;
        this.open_card = open_card;
+       this.normal = normal;
        for(int i =0;i<num_buttons;i++){
     		this.buttonsArray[i].setOnClickListener(new View.OnClickListener() {
                 @Override
