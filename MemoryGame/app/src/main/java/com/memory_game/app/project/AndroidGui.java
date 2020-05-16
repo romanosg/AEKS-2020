@@ -26,7 +26,7 @@ Activity a;
 boolean battle;
 char open_card;
 
-   public AndroidGui(TextView[] labelsArray, int num_buttons, Button[] buttonsArray, Activity a, boolean battle, char open_card){
+   public AndroidGui(TextView[] labelsArray, int num_buttons, Button[] buttonsArray, Activity a, boolean battle, char open_card, boolean normal){
        this.labelsArray = labelsArray;
        this.num_buttons = num_buttons;
        this.buttonsArray = buttonsArray;
@@ -46,9 +46,13 @@ char open_card;
 
 protected void handleEvent(View v) {
         int id = v.getId();
-    	if(!battle){
+    	if(!battle && normal){
             this.openCard(id-R.id.card01);//Integer.parseInt(s));
     	    this.st(new Thread(new OpenCardR(this, id-R.id.card01, open_card)));
+        }
+        else if(!battle && !normal){
+            this.openCard(id-R.id.card_3_01);//Integer.parseInt(s));
+    	    this.st(new Thread(new OpenCardR(this, id-R.id.card_3_01, open_card)));
         }
         else{
             int offset=0;

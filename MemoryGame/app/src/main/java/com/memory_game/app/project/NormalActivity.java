@@ -21,7 +21,7 @@ int num_buttons;
 AndroidGui gui;
 int num_players;
 int num_bots;
-
+boolean normal = false;
 
 	private static Context context;
    @Override
@@ -31,12 +31,12 @@ int num_bots;
       char bota = 'e';
       char botb = 'e';
       char botc = 'e';
-      boolean normal = false;
       num_players = getIntent().getIntExtra("num_of_players", 2);
       num_bots = getIntent().getIntExtra("num_of_bots", 1);
       normal = getIntent().getBooleanExtra("normal", true);
       if(!normal){
-          System.out.println("!!");
+          num_buttons=24;
+          setContentView(R.layout.cards3);
       }
       else{
           num_buttons=28;
@@ -47,13 +47,13 @@ int num_bots;
       if(num_bots>2) botc = getIntent().getCharExtra("botc", 'e');
       //gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, 'n');
       if(!normal){
-          gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, '6');
+          gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, '6', false);
           if(num_bots==1)GameManagerMod4.InitGameManager(gui,num_players,num_bots,num_buttons,bota);
           else if(num_bots==2)GameManagerMod4.InitGameManager(gui,num_players,num_bots,num_buttons,bota,botb);
           else if(num_bots==3)GameManagerMod4.InitGameManager(gui,num_players,num_bots,num_buttons,bota,botb,botc);
       }
       else{
-          gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, 'n');
+          gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, 'n', true);
           if(num_bots==1)GameManagerNormal.InitGameManager(gui,num_players,num_bots,num_buttons,bota);
           else if(num_bots==2)GameManagerNormal.InitGameManager(gui,num_players,num_bots,num_buttons,bota,botb);
           else if(num_bots==3)GameManagerNormal.InitGameManager(gui,num_players,num_bots,num_buttons,bota,botb,botc);
@@ -77,7 +77,8 @@ int num_bots;
     protected Button[] buttons(){
         Button[] buttonsArray = new Button[num_buttons];
     	for(int i =0;i<num_buttons;i++){
-    		buttonsArray[i] = (Button) findViewById(R.id.card01+i);
+    		if(normal)buttonsArray[i] = (Button) findViewById(R.id.card01+i);
+                else buttonsArray[i] = (Button) findViewById(R.id.card_3_01+i);
     		buttonsArray[i].setBackgroundResource(R.drawable.back_cover);
     		//buttonsArray[i].setText("button"+i);
     		}

@@ -27,7 +27,7 @@ AndroidGui gui;
       this.context = getApplicationContext();
       setContentView(R.layout.battle);
       char bota = 'e', botb = 'e', botc = 'e';
-      gui = new AndroidGui(setLabels(), 28, buttons(), this, true, 'b');
+      gui = new AndroidGui(setLabels(), 28, buttons(), this, true, 'b', false);
       //GameManagerMod8.InitGameManager(gui,2,1,14,'h','h');
       int num_bots = getIntent().getIntExtra("num_of_bots", 1);
       if(num_bots>0) bota = getIntent().getCharExtra("bota", 'e');
