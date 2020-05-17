@@ -51,4 +51,10 @@ public class Player {
     public void setPairsOf3Wins(int pairsOf3Wins) {
         this.pairsOf3Wins = pairsOf3Wins;
     }
+
+    public void winsPairsOf2() {pairsOf2Wins++;}
+
+    public void winsPairsOf3() {pairsOf3Wins++;}
+
+    public void winsBattle(){battleWins++;}
 }

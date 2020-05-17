@@ -31,7 +31,6 @@
         <activity android:name="com.android.MemoryGameActivities.SelectionScreen" />
         <activity android:name="com.android.MemoryGameActivities.Highscores" />
         <activity android:name="com.android.MemoryGameActivities.findPlayerActivity" />
-        <activity android:name="com.android.MemoryGameActivities.PairsOfTwoCardsActivity" />
     </application>
 
 </manifest>
