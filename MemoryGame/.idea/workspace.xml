@@ -10,18 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d14c3bbc-8594-4174-aab8-57cb42da0c9e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/rulesPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_rules_page.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Learner.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Learner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Mode_Sector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/BackEnd/Player_Sector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/Database/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/Database/DBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/ModeSelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/ModeSelection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/SelectionScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/SelectionScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mode_selection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mode_selection.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/MemoryGameActivities/Rules.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,18 +69,18 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\java\com\" />
-      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\java" />
-      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\res\drawable" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\res\layout" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.android.MemoryGameActivities" />
       <recent name="com.example.MemoryGameActivities" />
       <recent name="com.example.myapplication" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\res\layout" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\java\com\" />
+      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\java" />
+      <recent name="C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\res\drawable" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -217,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588239200049</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implemented DB in Selection Screen&#10;Changed the Mode Selection Screen&#10;Removed Player_Sector and Mode_Sector">
+      <created>1588771638743</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1588771638743</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

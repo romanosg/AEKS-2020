@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void rulesActivity(View view){
-        Intent i= new Intent(this,Rules.class);
+        Intent i= new Intent(this,rulesPage.class);
         startActivity(i);
     }
     public void highScoresActivity(View view){
