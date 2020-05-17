@@ -11,7 +11,7 @@ import android.content.Context;
 import com.memory_game.app.R;
 import android.util.Log;
 
-import com.memory_game.app.GameManagers.GameManagerNormal;
+import com.android.BackEnd.GameManagers.GameManagerNormal;
 import com.memory_game.app.project.*;
 
 public class AndroidGui{

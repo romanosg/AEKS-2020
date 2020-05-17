@@ -129,14 +129,16 @@ public class DBHandler extends SQLiteOpenHelper {
 
     //method that updates the data of the mentioned player in the player table
     public void updateData(Player player){
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, player.getName());
-        values.put(COLUMN_PAIRSOF2WINS, player.getPairsOf2Wins());
-        values.put(COLUMN_PAIRSOF3WINS, player.getPairsOf3Wins());
-        values.put(COLUMN_BATTLEWINS, player.getBattleWins());
-        SQLiteDatabase db = this.getWritableDatabase();
-        db.update(TABLE_PLAYERS, values, COLUMN_NAME + " = ?", new String[] {player.getName()});
-        db.close();
+        if(player!=null) {
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_NAME, player.getName());
+            values.put(COLUMN_PAIRSOF2WINS, player.getPairsOf2Wins());
+            values.put(COLUMN_PAIRSOF3WINS, player.getPairsOf3Wins());
+            values.put(COLUMN_BATTLEWINS, player.getBattleWins());
+            SQLiteDatabase db = this.getWritableDatabase();
+            db.update(TABLE_PLAYERS, values, COLUMN_NAME + " = ?", new String[]{player.getName()});
+            db.close();
+        }
     }
 
 

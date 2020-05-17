@@ -141,9 +141,9 @@ public class SelectionScreen extends AppCompatActivity {
             if (currentPlayer == numberOfPlayers) {
                 switch (gameMode) {
                     case 1:
-                        Intent i = new Intent(this, PairsOfTwoCardsActivity.class);
+                        //Intent i = new Intent(this, PairsOfTwoCardsActivity.class);
                         //eisagwgi paiktwn
-                        startActivity(i);
+                        //startActivity(i);
                     case 2:
                         //code goes here
                         break;
