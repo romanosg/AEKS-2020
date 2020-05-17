@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -20,6 +21,8 @@ import com.memory_game.app.R;
 import com.android.Database.DBHandler;
 import com.android.Database.Player;
 
+import java.io.Serializable;
+
 public class SelectionScreen extends AppCompatActivity {
     private Learner learner;
     private int currentPlayer;
@@ -28,9 +31,23 @@ public class SelectionScreen extends AppCompatActivity {
     private DBHandler db;
     private Player player;
     private String player1name;
-    private boolean player1AIState;
     private String player2name;
     private boolean player2AIState;
+    EditText playerName=findViewById(R.id.playerName);
+
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+        CharSequence playerNameText= playerName.getText();
+        outState.putCharSequence("playerName",playerNameText);
+        boolean AIState = learner.isAI();
+        outState.putBoolean("AIState",AIState);
+        Sector difficulty = learner.getSector();
+        outState.putSerializable("difficulty",difficulty);
+
+    }
 
 
     @Override
@@ -40,6 +57,8 @@ public class SelectionScreen extends AppCompatActivity {
         learner = new Learner();
         currentPlayer = 1;
         TextView tv = findViewById(R.id.playerOptions);
+        Button previous = findViewById(R.id.previousButton);
+        Button next= findViewById(R.id.nextButton);
         tv.setText("Player " + currentPlayer + ":");
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -47,6 +66,21 @@ public class SelectionScreen extends AppCompatActivity {
         }
         numberOfPlayers = 2;
         db = new DBHandler(this, null, null, 1);
+        if(savedInstanceState!=null){
+            CharSequence player= savedInstanceState.getCharSequence("playerName");
+            boolean AIState=savedInstanceState.getBoolean("AIState");
+            Serializable difficulty= savedInstanceState.getSerializable("difficulty");
+            Sector playerDifficulty= (Sector) difficulty;
+            playerName.setText(player);
+            learner.setAI(AIState);
+            learner.setSector(playerDifficulty);
+
+
+        } else{
+            playerName.setText("");
+            learner.setAI(false);
+            learner.setSector(Sector.e);
+        }
     }
 
     public void checkBoxClicked(View view) {
@@ -80,15 +114,15 @@ public class SelectionScreen extends AppCompatActivity {
 
         switch (rbid) {
             case R.id.radio_beginner:
-                learner.setSector(Sector.BEGINNER);
+                learner.setSector(Sector.e);
                 message = "Beginner";
                 break;
             case R.id.radio_novice:
-                learner.setSector(Sector.NOVICE);
+                learner.setSector(Sector.n);
                 message = "Novice";
                 break;
             case R.id.radio_expert:
-                learner.setSector(Sector.EXPERT);
+                learner.setSector(Sector.h);
                 message = "Expert";
                 break;
         }
@@ -107,19 +141,6 @@ public class SelectionScreen extends AppCompatActivity {
             RadioGroup difficulty = findViewById(R.id.difficulty_group);
             learner.setName(playerName.getText().toString());
             learner.setAI(AICheck.isChecked());
-            int rbid = difficulty.getCheckedRadioButtonId();
-
-            switch (rbid) {
-                case R.id.radio_beginner:
-                    learner.setSector(Sector.BEGINNER);
-                    break;
-                case R.id.radio_novice:
-                    learner.setSector(Sector.NOVICE);
-                    break;
-                case R.id.radio_expert:
-                    learner.setSector(Sector.EXPERT);
-                    break;
-            }
             player = db.findPlayer(playerName.getText().toString());
             if (player == null) {
                 db.addNewPlayer(playerName.getText().toString());
@@ -134,6 +155,7 @@ public class SelectionScreen extends AppCompatActivity {
             AICheck.setChecked(false);
             difficulty.clearCheck();
             currentPlayer--;
+
 
         }
     }
@@ -160,13 +182,13 @@ public class SelectionScreen extends AppCompatActivity {
                 int rbid = difficulty.getCheckedRadioButtonId();
                 switch (rbid) {
                     case R.id.radio_beginner:
-                        learner.setSector(Sector.BEGINNER);
+                        learner.setSector(Sector.e);
                         break;
                     case R.id.radio_novice:
-                        learner.setSector(Sector.NOVICE);
+                        learner.setSector(Sector.n);
                         break;
                     case R.id.radio_expert:
-                        learner.setSector(Sector.EXPERT);
+                        learner.setSector(Sector.h);
                         break;
                 }
                 player = db.findPlayer(playerName.getText().toString());
@@ -176,8 +198,8 @@ public class SelectionScreen extends AppCompatActivity {
                 else{
                     player1name=playerName.getText().toString();
                     if(!learner.isAI())
-                        player1AIState=false;
-                    else player1AIState=true;
+                        player2AIState=false;
+                    else player2AIState=true;
                 }
                 playerName.setText("");
                 AICheck.setChecked(false);

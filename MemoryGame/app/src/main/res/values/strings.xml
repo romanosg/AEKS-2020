@@ -38,8 +38,8 @@
     <string name="beginner">Beginner</string>
     <string name="novice">Novice</string>
     <string name="expert">Expert</string>
-    <string name="previousButton">Previous Player/Back</string>
-    <string name="nextButton">Next Player/Start Game</string>
+    <string name="previousButton">Back</string>
+    <string name="nextButton">Start Game</string>
     <string name="rulesTitle">Rules</string>
     <string name="pairOf2Rules"> Pairs Of 2: A player must find pairs of identical cards in a grid of 28 cards.
     If he finds a pair, he gets a point and gets to play again. However if he doesn\'t find one, it\'s the opponent\'s turn.
