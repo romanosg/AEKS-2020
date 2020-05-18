@@ -14,11 +14,13 @@ import com.android.BackEnd.AndroidGui;
 
 public class NormalActivity extends Activity {
 	
-int num_buttons;
-AndroidGui gui;
-int num_players;
-int num_bots;
-boolean normal = false;
+private int num_buttons;
+private AndroidGui gui;
+private int num_players;
+private int num_bots;
+private boolean normal;
+private String player1;
+private String player2;
 
 	private static Context context;
    @Override
@@ -28,6 +30,14 @@ boolean normal = false;
       char bota = 'e';
       char botb = 'e';
       char botc = 'e';
+      player1 = getIntent().getStringExtra("player1Name");
+      player2 = getIntent().getStringExtra("player1Name");
+      if(player1 == ""){
+          player1 = "Player1";
+      }
+       if(player2 == ""){
+           player2 = "Player2";
+       }
       num_players = getIntent().getIntExtra("num_of_players", 2);
       num_bots = getIntent().getIntExtra("num_of_bots", 1);
       normal = getIntent().getBooleanExtra("normal", true);
@@ -39,10 +49,16 @@ boolean normal = false;
           num_buttons=28;
           setContentView(R.layout.normal);
       }
-      if(num_bots>0) bota = getIntent().getCharExtra("bota", 'e');
+      String Players[] = new String[2];
+      Players[0] = player1;
+      Players[1] = player2;
+
+      if(num_bots>0) bota = getIntent().getCharExtra("difficulty", 'e');
+
+      //multiple bots, won't be supported in this app version
       if(num_bots>1) botb = getIntent().getCharExtra("botb", 'e');
       if(num_bots>2) botc = getIntent().getCharExtra("botc", 'e');
-      //gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, 'n');
+
       if(!normal){
           gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, '6', false);
           if(num_bots==1)GameManagerMod4.InitGameManager(gui,num_players,num_bots,num_buttons,bota);
@@ -65,8 +81,8 @@ boolean normal = false;
         labelsArray[0] = (TextView) findViewById(R.id.ma_text1);
         labelsArray[1] = (TextView) findViewById(R.id.ma_text2);
         
-        labelsArray[0].setText("Player 1:");
-	labelsArray[1].setText("Player 2:");
+        labelsArray[0].setText(player1 + ":");
+	    labelsArray[1].setText(player2 + ":");
 
         return labelsArray;
     }

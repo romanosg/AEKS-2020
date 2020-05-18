@@ -1544,6 +1544,7 @@ id b_card27
 id b_card28
 id b_text1
 id b_text2
+id backButton
 id barrier
 id battle2
 id beginning
@@ -1611,9 +1612,6 @@ id checkbox
 id checked
 id chip
 id chip_group
-id choice01
-id choice02
-id choice03
 id chronometer
 id clear_text
 id clip_horizontal
@@ -1638,7 +1636,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
-id difficulty_group
+id difficultygroup
 id dimensions
 id direct
 id disableHome
@@ -1687,7 +1685,6 @@ id largeLabel
 id left
 id line1
 id line3
-id linear_layout
 id listMode
 id list_item
 id ma_text1
@@ -1755,7 +1752,10 @@ id peekHeight
 id percent
 id pin
 id playGame
-id playerName
+id player1Name
+id player1Options
+id player2Name
+id player2Options
 id playerOptions
 id playerSearchInfo
 id playerTextView
@@ -1774,7 +1774,11 @@ id right
 id right_icon
 id right_side
 id rounded
+id rulesBattle
 id rulesButton
+id rulesHeader
+id rulesPairsOf2
+id rulesPairsOf3
 id save_non_transition_alpha
 id save_overlay_view
 id scale
@@ -1846,7 +1850,6 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
-id title_text1
 id top
 id topPanel
 id touch_outside
@@ -1936,7 +1939,7 @@ layout activity_highscores
 layout activity_main
 layout activity_mode_selection
 layout activity_pairs_of_two_cards
-layout activity_rules
+layout activity_rules_page
 layout activity_selection_screen
 layout battle
 layout cards3
@@ -1991,7 +1994,6 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout play
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2127,11 +2129,14 @@ string path_password_strike_through
 string playGame
 string player
 string player1
+string player1options
 string player2
+string player2options
 string player3
 string playerID
 string playerNameSelect
 string playerOptions
+string playeroptions
 string playersearchinfo
 string previous
 string previousButton

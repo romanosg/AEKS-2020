@@ -141,45 +141,50 @@ public class SelectionScreen extends AppCompatActivity {
                 i.putExtra("player1Name",player1Name.getText());
                 i.putExtra("player2Name",player2Name.getText());
                 i.putExtra("AIState",learner.isAI());
-                if(!learner.isAI())
-                    i.putExtra("difficulty","p");
+                if(!learner.isAI()) {
+                    i.putExtra("difficulty", 'p');
+                    i.putExtra("num_of_bots", 0);
+                }
                 else{
                     RadioGroup difficulty = findViewById(R.id.difficultygroup);
                     int rbid = difficulty.getCheckedRadioButtonId();
                     switch (rbid) {
                         case R.id.radio_beginner:
-                           i.putExtra("difficulty","e");
+                           i.putExtra("difficulty",'e');
                             break;
                         case R.id.radio_novice:
-                            i.putExtra("difficulty","n");
+                            i.putExtra("difficulty",'n');
                             break;
                         case R.id.radio_expert:
-                            i.putExtra("difficulty","h");
+                            i.putExtra("difficulty",'h');
                             break;
                     }
                 }
-                i.putExtra("isPairsOf2",true);
+                i.putExtra("normal",true);
                 startActivity(i);
                 break;
             case 2:
-                i=new Intent(this,NormalActivity.class);
+                i= new Intent(this,NormalActivity.class);
                 i.putExtra("player1Name",player1Name.getText());
                 i.putExtra("player2Name",player2Name.getText());
                 i.putExtra("AIState",learner.isAI());
-                if(!learner.isAI())
-                    i.putExtra("difficulty","p");
+                if(!learner.isAI()) {
+                    i.putExtra("difficulty", 'p');
+                    i.putExtra("num_of_bots", 0);
+                }
                 else{
+                    i.putExtra("num_of_bots", 1);
                     RadioGroup difficulty = findViewById(R.id.difficultygroup);
                     int rbid = difficulty.getCheckedRadioButtonId();
                     switch (rbid) {
                         case R.id.radio_beginner:
-                            i.putExtra("difficulty","e");
+                            i.putExtra("difficulty",'e');
                             break;
                         case R.id.radio_novice:
-                            i.putExtra("difficulty","n");
+                            i.putExtra("difficulty",'n');
                             break;
                         case R.id.radio_expert:
-                            i.putExtra("difficulty","h");
+                            i.putExtra("difficulty",'h');
                             break;
                     }
                 }
@@ -191,20 +196,23 @@ public class SelectionScreen extends AppCompatActivity {
                 i.putExtra("player1Name",player1Name.getText());
                 i.putExtra("player2Name",player2Name.getText());
                 i.putExtra("AIState",learner.isAI());
-                if(!learner.isAI())
-                    i.putExtra("difficulty","p");
+                if(!learner.isAI()) {
+                    i.putExtra("difficulty", 'p');
+                    i.putExtra("num_of_bots", 0);
+                }
                 else{
+                    i.putExtra("num_of_bots", 1);
                     RadioGroup difficulty = findViewById(R.id.difficultygroup);
                     int rbid = difficulty.getCheckedRadioButtonId();
                     switch (rbid) {
                         case R.id.radio_beginner:
-                            i.putExtra("difficulty","e");
+                            i.putExtra("difficulty",'e');
                             break;
                         case R.id.radio_novice:
-                            i.putExtra("difficulty","n");
+                            i.putExtra("difficulty",'n');
                             break;
                         case R.id.radio_expert:
-                            i.putExtra("difficulty","h");
+                            i.putExtra("difficulty",'h');
                             break;
                     }
                 }

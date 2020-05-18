@@ -14,24 +14,50 @@ import com.memory_game.app.R;
 public class BattleActivity extends Activity {
 	
 int num_buttons = 28;
-AndroidGui gui;
 
+    private AndroidGui gui;
 	private static Context context;
+	private String player1;
+	private String player2;
+	private int num_players;
+	private int num_bots;
+
+
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       this.context = getApplicationContext();
       setContentView(R.layout.battle);
       char bota = 'e', botb = 'e', botc = 'e';
-      gui = new AndroidGui(setLabels(), 28, buttons(), this, true, 'b', false);
-      //GameManagerMod8.InitGameManager(gui,2,1,14,'h','h');
-      int num_bots = getIntent().getIntExtra("num_of_bots", 1);
-      if(num_bots>0) bota = getIntent().getCharExtra("bota", 'e');
-      if(num_bots>1) botb = getIntent().getCharExtra("botb", 'e');
-      if(num_bots>2) botc = getIntent().getCharExtra("botc", 'e');
-      if(num_bots==1)GameManagerMod8.InitGameManager(gui,2,num_bots,14,bota);
-      else if(num_bots==2)GameManagerMod8.InitGameManager(gui,2,num_bots,14,bota,botb);
-      else if(num_bots==3)GameManagerMod8.InitGameManager(gui,2,num_bots,14,bota,botb,botc);
+       player1 = getIntent().getStringExtra("player1Name");
+       player2 = getIntent().getStringExtra("player1Name");
+       if(player1 == ""){
+           player1 = "Player1";
+       }
+       if(player2 == ""){
+           player2 = "Player2";
+       }
+       String Players[] = new String[2];
+       Players[0] = player1;
+       Players[1] = player2;
+       num_players = getIntent().getIntExtra("num_of_players", 2);
+       num_bots = getIntent().getIntExtra("num_of_bots", 1);
+       gui = new AndroidGui(setLabels(), 28, buttons(), this, true, 'b', false);
+
+
+       //GameManagerMod8.InitGameManager(gui,2,1,14,'h','h'); should be deleted????
+
+       int num_bots = getIntent().getIntExtra("num_of_bots", 1);
+       if(num_bots>0) bota = getIntent().getCharExtra("difficulty", 'e');
+       if(num_bots==1)GameManagerMod8.InitGameManager(gui,2,num_bots,14,bota);
+
+       //multiple bots. They are not supported in the current app's version
+       if(num_bots>1) botb = getIntent().getCharExtra("botb", 'e');
+       if(num_bots>2) botc = getIntent().getCharExtra("botc", 'e');
+       else if(num_bots==2)GameManagerMod8.InitGameManager(gui,2,num_bots,14,bota,botb);
+       else if(num_bots==3)GameManagerMod8.InitGameManager(gui,2,num_bots,14,bota,botb,botc);
+
+
    }
      
      /**
@@ -43,7 +69,7 @@ AndroidGui gui;
         labelsArray[1] = (TextView) findViewById(R.id.b_text2);
         
         labelsArray[0].setText("Player 1:");
-	labelsArray[1].setText("Player 2:");
+	    labelsArray[1].setText("Player 2:");
 
         return labelsArray;
     }

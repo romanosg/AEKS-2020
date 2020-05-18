@@ -202,4 +202,15 @@ public class DBHandler extends SQLiteOpenHelper {
         return player;
     }
 
+    //function that generates the player data if they don't exist, otherwise, the data of existing
+    //player are returned
+    public Player checkPlayer(String name){
+        Player player = findPlayer(name);
+        if(player==null){
+            addNewPlayer(name);
+            player = findPlayer(name);
+        }
+        return player;
+    }
+
 }

@@ -10,10 +10,11 @@
         android:id="@+id/playerOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/playeroptions"
+        android:textColor="#F00"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#F00"
         app:layout_constraintBottom_toTopOf="@id/player1Options"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +24,7 @@
         android:id="@+id/player1Options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:text="@string/player1options"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -37,7 +38,6 @@
         android:id="@+id/player1Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:autofillHints="username"
         android:ems="10"
         android:hint="@string/playerNameSelect"
@@ -52,7 +52,7 @@
         android:id="@+id/player2Options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="@string/player2options"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -65,16 +65,15 @@
         android:id="@+id/player2Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:autofillHints="username"
         android:ems="10"
         android:hint="@string/playerNameSelect"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/difficultygroup"
+        app:layout_constraintEnd_toStartOf="@id/AICheckBox"
         app:layout_constraintHorizontal_bias="0.237"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/AICheckBox"
-        app:layout_constraintTop_toBottomOf="@id/player2Options"
-        app:layout_constraintBottom_toTopOf="@id/difficultygroup"/>
+        app:layout_constraintTop_toBottomOf="@id/player2Options" />
 
     <CheckBox
         android:id="@+id/AICheckBox"
@@ -90,57 +89,60 @@
 
     <RadioGroup
         android:id="@+id/difficultygroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nextButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/player2Name"
-        app:layout_constraintBottom_toTopOf="@id/nextButton">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/player2Name">
 
         <RadioButton
             android:id="@+id/radio_beginner"
-            android:layout_width="112dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="radioButtonClicked"
             android:text="@string/beginner" />
 
         <RadioButton
             android:id="@+id/radio_novice"
-            android:layout_width="112dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:onClick="radioButtonClicked"
-            android:text="@string/novice"/>
+            android:text="@string/novice" />
+
         <RadioButton
             android:id="@+id/radio_expert"
-            android:layout_width="112dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="radioButtonClicked"
-            android:text="@string/expert"/>
+            android:text="@string/expert" />
     </RadioGroup>
 
     <Button
         android:id="@+id/previousButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/previousButton"
+        android:layout_marginBottom="8dp"
         android:onClick="previousActivity"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/previousButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/nextButton"
-        app:layout_constraintTop_toBottomOf="@id/difficultygroup"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/difficultygroup" />
+
     <Button
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/nextButton"
+        android:layout_marginBottom="8dp"
         android:onClick="nextActivity"
-        app:layout_constraintStart_toEndOf="@id/previousButton"
+        android:text="@string/nextButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/difficultygroup"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/previousButton"
+        app:layout_constraintTop_toBottomOf="@id/difficultygroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
