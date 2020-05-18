@@ -24,27 +24,25 @@ import com.android.Database.Player;
 import java.io.Serializable;
 
 public class SelectionScreen extends AppCompatActivity {
-    private Learner learner;
-    private int currentPlayer;
-    private int numberOfPlayers;
+    private Learner learner=new Learner();
     private int gameMode;
     private DBHandler db;
-    private Player player;
-    private String player1name;
-    private String player2name;
-    private boolean player2AIState;
-    EditText playerName=findViewById(R.id.playerName);
-
+    private Player player1;
+    private Player player2;
+    EditText player1Name = findViewById(R.id.player1Name);
+    EditText player2Name = findViewById(R.id.player2Name);
 
 
     @Override
-    protected void onSaveInstanceState(Bundle outState){
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        CharSequence playerNameText= playerName.getText();
-        outState.putCharSequence("playerName",playerNameText);
-        boolean AIState = learner.isAI();
-        outState.putBoolean("AIState",AIState);
-        Sector difficulty = learner.getSector();
+        CharSequence player1name=player1Name.getText();
+        outState.putCharSequence("player1",player1name);
+        CharSequence player2name=player2Name.getText();
+        outState.putCharSequence("player2",player2name);
+        boolean AIstate=learner.isAI();
+        outState.putBoolean("AIState",AIstate);
+        Sector difficulty= learner.getSector();
         outState.putSerializable("difficulty",difficulty);
 
     }
@@ -54,30 +52,24 @@ public class SelectionScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selection_screen);
-        learner = new Learner();
-        currentPlayer = 1;
-        TextView tv = findViewById(R.id.playerOptions);
-        Button previous = findViewById(R.id.previousButton);
-        Button next= findViewById(R.id.nextButton);
-        tv.setText("Player " + currentPlayer + ":");
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             gameMode = extras.getInt("gameMode");
         }
-        numberOfPlayers = 2;
         db = new DBHandler(this, null, null, 1);
         if(savedInstanceState!=null){
-            CharSequence player= savedInstanceState.getCharSequence("playerName");
-            boolean AIState=savedInstanceState.getBoolean("AIState");
-            Serializable difficulty= savedInstanceState.getSerializable("difficulty");
-            Sector playerDifficulty= (Sector) difficulty;
-            playerName.setText(player);
-            learner.setAI(AIState);
-            learner.setSector(playerDifficulty);
-
-
-        } else{
-            playerName.setText("");
+            CharSequence player1name=savedInstanceState.getCharSequence("player1");
+            player1Name.setText(player1name);
+            CharSequence player2name=savedInstanceState.getCharSequence("player2");
+            player2Name.setText(player2name);
+            boolean AIstate=savedInstanceState.getBoolean("AIState");
+            learner.setAI(AIstate);
+            Serializable difficulty=savedInstanceState.getSerializable("difficulty");
+            learner.setSector((Sector) difficulty);
+        }
+        else{
+            player1Name.setText("");
+            player2Name.setText("");
             learner.setAI(false);
             learner.setSector(Sector.e);
         }
@@ -85,30 +77,29 @@ public class SelectionScreen extends AppCompatActivity {
 
     public void checkBoxClicked(View view) {
         boolean checked = ((CheckBox) view).isChecked();
+        CheckBox AI = findViewById(R.id.AICheckBox);
         RadioButton rb1 = findViewById(R.id.radio_beginner);
         RadioButton rb2 = findViewById(R.id.radio_novice);
         RadioButton rb3 = findViewById(R.id.radio_expert);
-
         CharSequence message = "";
         if (checked) {
             message = "Player is AI";
-            rb1.setClickable(true);
-            rb2.setClickable(true);
-            rb3.setClickable(true);
+            rb1.setEnabled(true);
+            rb2.setEnabled(true);
+            rb3.setEnabled(true);
         } else {
-            rb1.setClickable(false);
-            rb2.setClickable(false);
-            rb3.setClickable(false);
-
+            rb1.setEnabled(false);
+            rb2.setEnabled(false);
+            rb3.setEnabled(false);
         }
-
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(this, message, duration);
         toast.show();
     }
 
+
     public void radioButtonClicked(View view) {
-        RadioGroup difficulty = findViewById(R.id.difficulty_group);
+        RadioGroup difficulty = findViewById(R.id.difficultygroup);
         int rbid = difficulty.getCheckedRadioButtonId();
         CharSequence message = "";
 
@@ -132,81 +123,93 @@ public class SelectionScreen extends AppCompatActivity {
 
     }
 
-    public void previousActivity(View view) {
-        if (currentPlayer == 1) {
-            onBackPressed();
-        } else {
-            EditText playerName = findViewById(R.id.playerName);
-            CheckBox AICheck = findViewById(R.id.AICheckBox);
-            RadioGroup difficulty = findViewById(R.id.difficulty_group);
-            learner.setName(playerName.getText().toString());
-            learner.setAI(AICheck.isChecked());
-            player = db.findPlayer(playerName.getText().toString());
-            if (player == null) {
-                db.addNewPlayer(playerName.getText().toString());
-            } else {
-                player2name=playerName.getText().toString();
+    public void previousActivity(View view) { onBackPressed(); }
+
+
+    public void nextActivity (View view) {
+        player1=db.findPlayer(player1Name.getText().toString());
+        if(player1==null)
+            db.addNewPlayer(player1Name.getText().toString());
+        if(!learner.isAI()){
+            player2=db.findPlayer(player2Name.getText().toString());
+            if(player2==null)
+                db.addNewPlayer(player2Name.getText().toString());
+        }
+        switch (gameMode) {
+            case 1:
+                Intent i=new Intent(this,NormalActivity.class);
+                i.putExtra("player1Name",player1Name.getText());
+                i.putExtra("player2Name",player2Name.getText());
+                i.putExtra("AIState",learner.isAI());
                 if(!learner.isAI())
-                    player2AIState=false;
-                else player2AIState=true;
-
-            }
-            playerName.setText("");
-            AICheck.setChecked(false);
-            difficulty.clearCheck();
-            currentPlayer--;
-
+                    i.putExtra("difficulty","p");
+                else{
+                    RadioGroup difficulty = findViewById(R.id.difficultygroup);
+                    int rbid = difficulty.getCheckedRadioButtonId();
+                    switch (rbid) {
+                        case R.id.radio_beginner:
+                           i.putExtra("difficulty","e");
+                            break;
+                        case R.id.radio_novice:
+                            i.putExtra("difficulty","n");
+                            break;
+                        case R.id.radio_expert:
+                            i.putExtra("difficulty","h");
+                            break;
+                    }
+                }
+                i.putExtra("isPairsOf2",true);
+                startActivity(i);
+                break;
+            case 2:
+                i=new Intent(this,NormalActivity.class);
+                i.putExtra("player1Name",player1Name.getText());
+                i.putExtra("player2Name",player2Name.getText());
+                i.putExtra("AIState",learner.isAI());
+                if(!learner.isAI())
+                    i.putExtra("difficulty","p");
+                else{
+                    RadioGroup difficulty = findViewById(R.id.difficultygroup);
+                    int rbid = difficulty.getCheckedRadioButtonId();
+                    switch (rbid) {
+                        case R.id.radio_beginner:
+                            i.putExtra("difficulty","e");
+                            break;
+                        case R.id.radio_novice:
+                            i.putExtra("difficulty","n");
+                            break;
+                        case R.id.radio_expert:
+                            i.putExtra("difficulty","h");
+                            break;
+                    }
+                }
+                i.putExtra("isPairsOf2",false);
+                startActivity(i);
+                break;
+            case 3:
+                i=new Intent(this,BattleActivity.class);
+                i.putExtra("player1Name",player1Name.getText());
+                i.putExtra("player2Name",player2Name.getText());
+                i.putExtra("AIState",learner.isAI());
+                if(!learner.isAI())
+                    i.putExtra("difficulty","p");
+                else{
+                    RadioGroup difficulty = findViewById(R.id.difficultygroup);
+                    int rbid = difficulty.getCheckedRadioButtonId();
+                    switch (rbid) {
+                        case R.id.radio_beginner:
+                            i.putExtra("difficulty","e");
+                            break;
+                        case R.id.radio_novice:
+                            i.putExtra("difficulty","n");
+                            break;
+                        case R.id.radio_expert:
+                            i.putExtra("difficulty","h");
+                            break;
+                    }
+                }
+                break;
 
         }
     }
-        public void nextActivity (View view){
-            if (currentPlayer == numberOfPlayers) {
-                switch (gameMode) {
-                    case 1:
-                        //Intent i = new Intent(this, PairsOfTwoCardsActivity.class);
-                        //eisagwgi paiktwn
-                        //startActivity(i);
-                    case 2:
-                        //code goes here
-                        break;
-                    case 3:
-                        //code goes here
-                        break;
-                }
-            } else {
-                EditText playerName = findViewById(R.id.playerName);
-                CheckBox AICheck = findViewById(R.id.AICheckBox);
-                RadioGroup difficulty = findViewById(R.id.difficulty_group);
-                learner.setName(playerName.getText().toString());
-                learner.setAI(AICheck.isChecked());
-                int rbid = difficulty.getCheckedRadioButtonId();
-                switch (rbid) {
-                    case R.id.radio_beginner:
-                        learner.setSector(Sector.e);
-                        break;
-                    case R.id.radio_novice:
-                        learner.setSector(Sector.n);
-                        break;
-                    case R.id.radio_expert:
-                        learner.setSector(Sector.h);
-                        break;
-                }
-                player = db.findPlayer(playerName.getText().toString());
-                if (player == null) {
-                    db.addNewPlayer(playerName.getText().toString());
-                }
-                else{
-                    player1name=playerName.getText().toString();
-                    if(!learner.isAI())
-                        player2AIState=false;
-                    else player2AIState=true;
-                }
-                playerName.setText("");
-                AICheck.setChecked(false);
-                difficulty.clearCheck();
-                currentPlayer++;
-            }
-
-        }
-
     }

@@ -1,7 +1,8 @@
 package com.android.BackEnd;
 
 public class Learner {
-    private String name;
+    private String name1;
+    private String name2;
     private boolean isAI;
     private Sector sector;
 
@@ -21,11 +22,16 @@ public class Learner {
         this.sector = sector;
     }
 
-    public String getName() {
-        return name;
+    public String getName1() {
+        return name1;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName1(String name) {
+        this.name1 = name;
     }
+
+    public String getName2(){return name2;}
+
+    public void setName2(String name){this.name2=name;}
+
 }
