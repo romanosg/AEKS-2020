@@ -9,6 +9,8 @@ import com.memory_game.app.R;
 
 import com.android.BackEnd.GameManagers.GameManagerNormal;
 
+//This class implements the gui, it changes the android's components like the buttons and the labels. Every change of those elements has to
+//happen through this class in order to happen on the thread that has the permission to alter the view components.
 public class AndroidGui{
 
 
@@ -21,6 +23,9 @@ boolean battle;
 char open_card;
 boolean normal;
 
+   //Constructor, it requires the initiated labels and buttons as well the number of the buttons. The activity is recuired in order to gain
+   //access to the guiThread. Boolean battle specidies if the game is of the battle mode and char open_card is a specific character for each
+   //mode. Finally normal flag specifies if the game is normal mode or not.
    public AndroidGui(TextView[] labelsArray, int num_buttons, Button[] buttonsArray, Activity a, boolean battle, char open_card, boolean normal){
        this.labelsArray = labelsArray;
        this.num_buttons = num_buttons;
@@ -39,7 +44,7 @@ boolean normal;
     		}
    }
 
-
+//This function is triggered when a card is selected, it flips the card and handles the calling of the thread that controls the closing of the cards
 protected void handleEvent(View v) {
         int id = v.getId();
     	if(!battle && normal){
@@ -85,7 +90,7 @@ buttonsArray[cardNumber].setBackgroundResource(R.drawable.back_cover);
         
     }
 
-//------------------------------------
+//The following two functions are changing the text in the labels.
 
     public void changeJLabelsTurn(final int x){
 a.runOnUiThread(new Runnable() {
@@ -116,12 +121,13 @@ labelsArray[x].setText(s);
     protected void st(Thread t1){
     	t1.start();
     }
-    
+    //The following functions are rendering some buttons (or all of them) unclicable or they restore their ability to be clicked. It is used in order to disable the buttons during the bots' turns and re enable them afterwards.
     public void unClicableButtons(int x1){
     	buttonsArray[x1].setOnClickListener(null);
          //buttonsArray[x1].setEnabled(false);
     }
     
+    //Depricated function used for the pure java implementation in order to end the game.
     public void gameEnd(){
     	//frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
     }

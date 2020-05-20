@@ -95,7 +95,7 @@ public class GameManagerNormal extends GameManager {
     		mainTable[x2]=i;
     	}	
     }
-
+    //In this function we implement the turn based logic of the game, here we specify the player and we evaluate the result of the cards he opened. We add the score and we start the next round. This function is overide in the other two gamemanagers and it implements the different modes.
     public static void OpenCard(AndroidGui gui, int cardNumber){
     	if(cardNumber==-1){
     		moves++;

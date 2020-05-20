@@ -11,7 +11,7 @@ import com.android.BackEnd.GameManagers.GameManagerMod4;
 import com.memory_game.app.R;
 import com.android.BackEnd.AndroidGui;
 
-
+//This activity starts a game with either normal mode or 3cards mode.
 public class NormalActivity extends Activity {
 	
 private int num_buttons;
@@ -58,7 +58,8 @@ private String player2;
       //multiple bots, won't be supported in this app version
       if(num_bots>1) botb = getIntent().getCharExtra("botb", 'e');
       if(num_bots>2) botc = getIntent().getCharExtra("botc", 'e');
-
+      
+      //It starts either a game in normal mode (GameManagerNormal) or in 3cards mode (GamemanagerMod4).
       if(!normal){
           gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, '6', false);
           if(num_bots==1)GameManagerMod4.InitGameManager(gui,num_players,num_bots,num_buttons,bota);
@@ -74,7 +75,7 @@ private String player2;
    }
      
      /**
-     * Αρχηκοποιεί τα JLabels.
+     * Initiates the Labels.
      */
     protected TextView[] setLabels(){
         TextView[] labelsArray = new TextView[2];
@@ -87,6 +88,7 @@ private String player2;
         return labelsArray;
     }
 
+    //Initiates the Buttons.
     protected Button[] buttons(){
         Button[] buttonsArray = new Button[num_buttons];
     	for(int i =0;i<num_buttons;i++){

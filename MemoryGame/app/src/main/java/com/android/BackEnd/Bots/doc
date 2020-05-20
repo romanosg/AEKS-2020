@@ -1,0 +1,1 @@
+The Class Bot and the ones that derive from this one are implementing the behavior of the bots for each mode. There are three bots for each mode (easy, normal, hard). The easy bot has a completely random behavior while the normal bot remembers half of the cards that are opened and the hard one that remembers all the cards.
