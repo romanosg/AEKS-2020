@@ -65,12 +65,14 @@ private String player2;
           if(num_bots==1)GameManagerMod4.InitGameManager(gui,num_players,num_bots,num_buttons,bota);
           else if(num_bots==2)GameManagerMod4.InitGameManager(gui,num_players,num_bots,num_buttons,bota,botb);
           else if(num_bots==3)GameManagerMod4.InitGameManager(gui,num_players,num_bots,num_buttons,bota,botb,botc);
+          else GameManagerMod4.InitGameManager(gui,num_players,0,num_buttons, 'n');
       }
       else{
           gui = new AndroidGui(setLabels(), num_buttons, buttons(), this, false, 'n', true);
           if(num_bots==1)GameManagerNormal.InitGameManager(gui,num_players,num_bots,num_buttons,bota);
           else if(num_bots==2)GameManagerNormal.InitGameManager(gui,num_players,num_bots,num_buttons,bota,botb);
           else if(num_bots==3)GameManagerNormal.InitGameManager(gui,num_players,num_bots,num_buttons,bota,botb,botc);
+          else GameManagerNormal.InitGameManager(gui,num_players,0,num_buttons,'n');
       }
    }
      

@@ -48,6 +48,7 @@ int num_buttons = 28;
        int num_bots = getIntent().getIntExtra("num_of_bots", 1);
        if(num_bots>0) bota = getIntent().getCharExtra("difficulty", 'e');
        if(num_bots==1)GameManagerMod8.InitGameManager(gui,2,num_bots,14,bota);
+       else GameManagerMod8.InitGameManager(gui,2,0,14,'n');
 
 
    }
