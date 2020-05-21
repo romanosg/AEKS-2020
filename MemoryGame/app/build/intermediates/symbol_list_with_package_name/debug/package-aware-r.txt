@@ -1455,10 +1455,6 @@ id SYM
 id SecondFragment
 id TOP_END
 id TOP_START
-id _3_card02
-id _3_card03
-id _3_card04
-id _3_card05
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1586,6 +1582,10 @@ id card26
 id card27
 id card28
 id card_3_01
+id card_3_02
+id card_3_03
+id card_3_04
+id card_3_05
 id card_3_06
 id card_3_07
 id card_3_08

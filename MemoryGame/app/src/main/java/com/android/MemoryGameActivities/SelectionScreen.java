@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,7 @@ public class SelectionScreen extends AppCompatActivity {
     private Player player2;
     EditText player1Name;
     EditText player2Name;
-    RadioGroup difficulty;
+    RadioGroup difficultyRG;
     CheckBox AI;
     RadioButton rb1;
     RadioButton rb2;
@@ -50,7 +51,7 @@ public class SelectionScreen extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         player1Name = findViewById(R.id.player1Name);
         player2Name = findViewById(R.id.player2Name);
-        difficulty = findViewById(R.id.difficultygroup);
+        difficultyRG = findViewById(R.id.difficultygroup);
         AI = findViewById(R.id.AICheckBox);
         rb1 = findViewById(R.id.radio_beginner);
         rb2 = findViewById(R.id.radio_novice);
@@ -77,8 +78,8 @@ public class SelectionScreen extends AppCompatActivity {
             AI.setChecked(false);
             rb1.setChecked(true);
             enableRadioGroup(false);
-            player1Name.setText("");
-            player2Name.setText("");
+            player1Name.setText("Player 1");
+            player2Name.setText("Player 2");
             learner.setAI(false);
             learner.setSector(Sector.e);
         }
@@ -110,7 +111,6 @@ public class SelectionScreen extends AppCompatActivity {
             learner.setAI(false);
             enableRadioGroup(false);
         }
-        int duration = Toast.LENGTH_SHORT;
     }
 
     //functionality that enables or disables all radiobuttons
@@ -123,7 +123,7 @@ public class SelectionScreen extends AppCompatActivity {
 
     //functionality of clicking a radiobutton
     public void radioButtonClicked(View view) {
-        int rbid = difficulty.getCheckedRadioButtonId();
+        int rbid = difficultyRG.getCheckedRadioButtonId();
         switch (rbid) {
             case R.id.radio_beginner:
                 learner.setSector(Sector.e);
@@ -143,13 +143,24 @@ public class SelectionScreen extends AppCompatActivity {
 
     //class that sends data to the next upcoming activity, based on gameMode
     public void nextActivity (View view) {
+        Log.d(null, "sending data");
         //checks if fields are empty to give default name
-        if(player1Name.getText().toString() == ""){
-            player1Name.setText("Player1");
+        if(TextUtils.isEmpty(player1Name.getText())){
+            player1Name.setText("Player 1");
         }
-        if(player2Name.getText().toString() == ""){
-            player2Name.setText("Player2");
+        if(TextUtils.isEmpty(player1Name.getText())){
+            player2Name.setText("Player 2");
         }
+
+        Log.d(null, player1Name.getText().toString());
+        Log.d(null, player2Name.getText().toString());
+        Log.d(null, ""+gameMode);
+        Log.d(null, ""+learner.isAI());
+        Log.d(null, ""+learner.getSector());
+
+
+
+
 
         //checks if player is not in db to be inserted
         player1=db.findPlayer(player1Name.getText().toString());
@@ -166,15 +177,15 @@ public class SelectionScreen extends AppCompatActivity {
             //goes to normal activity and sends specific data for pairs of 2 cards game
             case 1:
                 Intent i=new Intent(this,NormalActivity.class);
-                i.putExtra("player1Name",player1Name.getText());
-                i.putExtra("player2Name",player2Name.getText());
+                i.putExtra("player1Name",player1Name.getText().toString());
+                i.putExtra("player2Name",player2Name.getText().toString());
                 i.putExtra("AIState",learner.isAI());
                 if(!learner.isAI()) {
                     i.putExtra("difficulty", 'p');
                     i.putExtra("num_of_bots", 0);
                 }
                 else{
-                    int rbid = difficulty.getCheckedRadioButtonId();
+                    int rbid = difficultyRG.getCheckedRadioButtonId();
                     switch (rbid) {
                         case R.id.radio_beginner:
                            i.putExtra("difficulty",'e');
@@ -193,8 +204,8 @@ public class SelectionScreen extends AppCompatActivity {
             //goes to normal activity and sends specific data for pairs of 3 cards game
             case 2:
                 i= new Intent(this,NormalActivity.class);
-                i.putExtra("player1Name",player1Name.getText());
-                i.putExtra("player2Name",player2Name.getText());
+                i.putExtra("player1Name",player1Name.getText().toString());
+                i.putExtra("player2Name",player2Name.getText().toString());
                 i.putExtra("AIState",learner.isAI());
                 if(!learner.isAI()) {
                     i.putExtra("difficulty", 'p');
@@ -202,7 +213,7 @@ public class SelectionScreen extends AppCompatActivity {
                 }
                 else{
                     i.putExtra("num_of_bots", 1);
-                    int rbid = difficulty.getCheckedRadioButtonId();
+                    int rbid = difficultyRG.getCheckedRadioButtonId();
                     switch (rbid) {
                         case R.id.radio_beginner:
                             i.putExtra("difficulty",'e');
@@ -221,8 +232,8 @@ public class SelectionScreen extends AppCompatActivity {
             //goes to battle activity and sends specific data for battle game
             case 3:
                 i=new Intent(this,BattleActivity.class);
-                i.putExtra("player1Name",player1Name.getText());
-                i.putExtra("player2Name",player2Name.getText());
+                i.putExtra("player1Name",player1Name.getText().toString());
+                i.putExtra("player2Name",player2Name.getText().toString());
                 i.putExtra("AIState",learner.isAI());
                 if(!learner.isAI()) {
                     i.putExtra("difficulty", 'p');
@@ -230,7 +241,7 @@ public class SelectionScreen extends AppCompatActivity {
                 }
                 else{
                     i.putExtra("num_of_bots", 1);
-                    int rbid = difficulty.getCheckedRadioButtonId();
+                    int rbid = difficultyRG.getCheckedRadioButtonId();
                     switch (rbid) {
                         case R.id.radio_beginner:
                             i.putExtra("difficulty",'e');

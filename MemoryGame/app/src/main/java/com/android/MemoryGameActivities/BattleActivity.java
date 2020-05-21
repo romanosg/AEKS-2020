@@ -2,12 +2,14 @@ package com.android.MemoryGameActivities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.content.Context;
 
 import com.android.BackEnd.AndroidGui;
 import com.android.BackEnd.GameManagers.GameManagerMod8;
+import com.android.Database.DBHandler;
 import com.memory_game.app.R;
 
 //This activity starts a game of battle mod. It uses the battle layout which is different than the normal layout and the layout for the 3 cards mode.
@@ -43,12 +45,20 @@ int num_buttons = 28;
        Players[1] = player2;
        num_players = getIntent().getIntExtra("num_of_players", 2);
        num_bots = getIntent().getIntExtra("num_of_bots", 1);
-       gui = new AndroidGui(setLabels(), 28, buttons(), this, true, 'b', false);
+       DBHandler db = new DBHandler(this, null, null, 1);
+
+       Log.d(null, player1);
+       Log.d(null, player2);
+       Log.d(null, ""+num_players);
+       Log.d(null, ""+num_bots);
+       Log.d(null, ""+num_buttons);
+
+       gui = new AndroidGui(Players, setLabels(), 28, buttons(), this, true, 'b', false);
 
        int num_bots = getIntent().getIntExtra("num_of_bots", 1);
        if(num_bots>0) bota = getIntent().getCharExtra("difficulty", 'e');
-       if(num_bots==1)GameManagerMod8.InitGameManager(gui,2,num_bots,14,bota);
-       else GameManagerMod8.InitGameManager(gui,2,0,14,'n');
+       if(num_bots==1)GameManagerMod8.InitGameManager(gui,db,2,num_bots,14,bota);
+       else GameManagerMod8.InitGameManager(gui,db,2,0,14,'n');
 
 
    }

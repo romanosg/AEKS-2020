@@ -2,6 +2,8 @@ package com.android.BackEnd.GameManagers;
 import java.util.Random;
 import com.android.BackEnd.Bots.*;
 import com.android.BackEnd.AndroidGui;
+import com.android.Database.DBHandler;
+import com.android.Database.Player;
 
 //anoigoun 3 kartes
 public class GameManagerMod4 extends GameManagerNormal{
@@ -17,12 +19,13 @@ public class GameManagerMod4 extends GameManagerNormal{
     return false;
 }
 
-public static void InitGameManager(AndroidGui gui,int numberOfPlayersvar,int numberOfBotsvar, int numberOfCardsvar,char... botLvlvar){
+public static void InitGameManager(AndroidGui gui, DBHandler dbhandler, int numberOfPlayersvar, int numberOfBotsvar, int numberOfCardsvar, char... botLvlvar){
 	numberOfPlayers = numberOfPlayersvar;
 	numberOfBots = numberOfBotsvar;
 	botLvl = botLvlvar;
 	numberOfCards = numberOfCardsvar;
 	mainTable = new int[numberOfCards];
+	db = dbhandler;
 	InitTable();
 	x2=-1;
 	if(numberOfPlayersvar==numberOfBotsvar)botPlay(gui);
@@ -172,6 +175,22 @@ protected static void botPlay(AndroidGui gui){
 	}
 	gui.openButtons();
 }
+	protected static void GameOver(AndroidGui gui){
+		if(playersScore[0]>playersScore[1]){
+			Player winner = db.checkPlayer(gui.getName(0));
+			winner.winsPairsOf3();
+			db.updateData(winner);
+		}else if((playersScore[1]>playersScore[0])&&numberOfBots==0){
+			Player winner = db.checkPlayer(gui.getName(1));
+			winner.winsPairsOf3();
+			db.updateData(winner);
+		}
+		gui.changeJLabels(1, "The game is over");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e1) {}
+		gui.gameEnd();
+	}
 
 	
 }
