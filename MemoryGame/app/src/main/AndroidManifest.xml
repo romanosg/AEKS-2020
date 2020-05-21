@@ -18,11 +18,12 @@
         </intent-filter>
         </activity>
         <activity android:name="com.android.MemoryGameActivities.ModeSelection"></activity>
-        <activity android:name="com.android.MemoryGameActivities.Rules"></activity>
+        <activity android:name="com.android.MemoryGameActivities.rulesPage"></activity>
         <activity android:name="com.android.MemoryGameActivities.SelectionScreen"></activity>
         <activity android:name="com.android.MemoryGameActivities.Highscores"></activity>
         <activity android:name="com.android.MemoryGameActivities.findPlayerActivity"></activity>
-        <activity android:name="com.android.MemoryGameActivities.PairsOfTwoCardsActivity"></activity>
+        <activity android:name="com.android.MemoryGameActivities.BattleActivity"></activity>
+        <activity android:name="com.android.MemoryGameActivities.NormalActivity"></activity>
     </application>
 
 </manifest>

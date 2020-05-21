@@ -17,6 +17,8 @@ import com.memory_game.app.R;
 
 import org.w3c.dom.Text;
 
+
+//activity regarding the highscores of players on each mode
 public class Highscores extends AppCompatActivity {
 
     TextView P1tv;
@@ -81,6 +83,7 @@ public class Highscores extends AppCompatActivity {
         }
     }
 
+    //saving the data upon destruction of activity
     @Override protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         CharSequence P1tvText = P1tv.getText();
