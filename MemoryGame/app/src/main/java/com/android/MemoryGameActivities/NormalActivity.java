@@ -1,6 +1,7 @@
 package com.android.MemoryGameActivities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -89,12 +90,15 @@ private String player2;
      * Initiates the Labels.
      */
     protected TextView[] setLabels(){
-        TextView[] labelsArray = new TextView[2];
+        TextView[] labelsArray = new TextView[3];
         labelsArray[0] = (TextView) findViewById(R.id.ma_text1);
         labelsArray[1] = (TextView) findViewById(R.id.ma_text2);
-        
+        labelsArray[2] = (TextView) findViewById(R.id.ma_text3);
+
+
         labelsArray[0].setText(player1 + ":");
 	    labelsArray[1].setText(player2 + ":");
+	    labelsArray[2].setText("It is " + player1 + "'s turn");
 
         return labelsArray;
     }
@@ -109,6 +113,15 @@ private String player2;
     		//buttonsArray[i].setText("button"+i);
     		}
         return buttonsArray;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+        finish();
     }
 
 }

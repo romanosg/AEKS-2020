@@ -152,16 +152,6 @@ public class SelectionScreen extends AppCompatActivity {
             player2Name.setText("Player 2");
         }
 
-        Log.d(null, player1Name.getText().toString());
-        Log.d(null, player2Name.getText().toString());
-        Log.d(null, ""+gameMode);
-        Log.d(null, ""+learner.isAI());
-        Log.d(null, ""+learner.getSector());
-
-
-
-
-
         //checks if player is not in db to be inserted
         player1=db.findPlayer(player1Name.getText().toString());
         if(player1==null)
@@ -231,6 +221,11 @@ public class SelectionScreen extends AppCompatActivity {
                 break;
             //goes to battle activity and sends specific data for battle game
             case 3:
+                Log.d(null, player1Name.getText().toString());
+                Log.d(null, player2Name.getText().toString());
+                Log.d(null, ""+gameMode);
+                Log.d(null, ""+learner.isAI());
+                Log.d(null, ""+learner.getSector());
                 i=new Intent(this,BattleActivity.class);
                 i.putExtra("player1Name",player1Name.getText().toString());
                 i.putExtra("player2Name",player2Name.getText().toString());
@@ -254,6 +249,7 @@ public class SelectionScreen extends AppCompatActivity {
                             break;
                     }
                 }
+                startActivity(i);
                 break;
         }
     }

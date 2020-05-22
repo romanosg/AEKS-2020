@@ -1545,6 +1545,7 @@ id b_card27
 id b_card28
 id b_text1
 id b_text2
+id b_text3
 id backButton
 id barrier
 id battle2
@@ -1690,6 +1691,7 @@ id listMode
 id list_item
 id ma_text1
 id ma_text2
+id ma_text3
 id masked
 id message
 id middle

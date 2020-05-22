@@ -1,6 +1,7 @@
 package com.android.MemoryGameActivities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -67,12 +68,15 @@ int num_buttons = 28;
      * Initiates the JLabels.
      */
     protected TextView[] setLabels(){
-        TextView[] labelsArray = new TextView[2];
+        TextView[] labelsArray = new TextView[3];
         labelsArray[0] = (TextView) findViewById(R.id.b_text1);
         labelsArray[1] = (TextView) findViewById(R.id.b_text2);
-        
-        labelsArray[0].setText("Player 1:");
-	    labelsArray[1].setText("Player 2:");
+        labelsArray[2] = (TextView) findViewById(R.id.b_text3);
+
+
+        labelsArray[0].setText(player1 + "'s points: 0");
+	    labelsArray[1].setText(player2 + "'s points: 0");
+        labelsArray[2].setText(player1 + "picks a card");
 
         return labelsArray;
     }
@@ -89,4 +93,11 @@ int num_buttons = 28;
         return buttonsArray;
     }
 
+    public void onBackPressed() {
+        Intent i = new Intent(this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+        finish();
+    }
 }

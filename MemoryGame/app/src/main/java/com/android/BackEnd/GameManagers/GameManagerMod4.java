@@ -185,7 +185,7 @@ protected static void botPlay(AndroidGui gui){
 			winner.winsPairsOf3();
 			db.updateData(winner);
 		}
-		gui.changeJLabels(1, "The game is over");
+		gui.changeJLabels(2, "The game is over");
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e1) {}

@@ -19,7 +19,7 @@ public class GameManagerMod8 extends GameManagerNormal{
     	InitTable();
     	playerCounter=1;
     	gui.closeP2buttons();
-    	gui.changeJLabels(1, gui.getName(0) + " picks a card");
+    	gui.changeJLabels(2, gui.getName(0) + " picks a card");
     	if(numberOfPlayersvar==numberOfBotsvar)botPlay(gui);
     }
 
@@ -85,26 +85,26 @@ public class GameManagerMod8 extends GameManagerNormal{
 	    		if(playerCounter==1){
 	    			gui.openP2buttons();
 		    		gui.closeP1buttons();
-		    		gui.changeJLabels(1, gui.getName(1) + " picks a card");
+		    		gui.changeJLabels(2, gui.getName(1) + " picks a card");
 		    		if(numberOfBots>0){
 		    			botPlay(gui);
 		    		}
 		    		else playerCounter=2;
 		    		}
 		    		else if(playerCounter==2){
-		    			gui.changeJLabels(1, "Now " + gui.getName(1) + " picks first");
+		    			gui.changeJLabels(2, "Now " + gui.getName(1) + " picks first");
 		    			playerCounter=3;
 		    		}
 		    		else if(playerCounter==3) {
 		    			gui.closeP2buttons();
 		    			gui.openP1buttons();
-		    			gui.changeJLabels(1, gui.getName(0) + " picks a card");
+		    			gui.changeJLabels(2, gui.getName(0) + " picks a card");
 		    			playerCounter=4;
 		    		}
 		    		else {
                                         gui.closeP2buttons();
 		    			gui.openP1buttons();
-		    			gui.changeJLabels(1, "Now " + gui.getName(0) + " picks first");
+		    			gui.changeJLabels(2, "Now " + gui.getName(0) + " picks first");
 		    			playerCounter=1;
 		    		}
 	    	}
@@ -113,25 +113,25 @@ public class GameManagerMod8 extends GameManagerNormal{
 	    		if(playerCounter==1){
 		    		gui.closeP1buttons();
 		    		gui.openP2buttons();
-		    		gui.changeJLabels(1, gui.getName(1) + " picks a card");
+		    		gui.changeJLabels(2, gui.getName(1) + " picks a card");
 		    		if(numberOfBots>0){
 		    			botPlay(gui);
 		    		}
 		    		else playerCounter=2;
 		    		}
 		    		else if(playerCounter==2){
-		    			gui.changeJLabels(1, "Now " + gui.getName(1) + " picks first");
+		    			gui.changeJLabels(2, "Now " + gui.getName(1) + " picks first");
 		    			playerCounter=3;
 		    		}
 		    		else if(playerCounter==3) {
 		    			gui.closeP2buttons();
 		    			gui.openP1buttons();
-		    			gui.changeJLabels(1, gui.getName(0) + " picks a card");
+		    			gui.changeJLabels(2, gui.getName(0) + " picks a card");
 		    			playerCounter=4;
 		    		}
 		    		else {
                                         
-		    			gui.changeJLabels(1, "Now " + gui.getName(0) + " picks first");
+		    			gui.changeJLabels(2, "Now " + gui.getName(0) + " picks first");
 		    			playerCounter=1;
 		    		}
 	    	}
@@ -187,10 +187,8 @@ public class GameManagerMod8 extends GameManagerNormal{
 	    	}
 	    	//playersScore[x]++;
 	    	String s="";
-	    	for(int i=0;i<numberOfPlayers;i++){
-				s = s+gui.getName(i) + "'s score: "+playersScore[i]+"   \n";
-	    	}
-	    	gui.changeJLabels(0,s);
+		 	s = s+gui.getName(x) + "'s points: "+playersScore[x];
+		 	gui.changeJLabels(x,s);
 	    }
 
 	 protected static void botPlay(AndroidGui gui){
@@ -233,7 +231,7 @@ public class GameManagerMod8 extends GameManagerNormal{
 			winner.winsBattle();
 			db.updateData(winner);
 		}
-		gui.changeJLabels(1, "The game is over");
+		gui.changeJLabels(2, "The game is over");
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e1) {}

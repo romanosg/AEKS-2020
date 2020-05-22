@@ -167,10 +167,9 @@ public class GameManagerNormal extends GameManager {
     	int x = moves%numberOfPlayers;
     	playersScore[x]++;
     	String s="";
-    	for(int i=0;i<numberOfPlayers;i++){
-    		s = s+gui.getName(i) + "'s score: "+playersScore[i]+"   \n";
-    	}
-    	gui.changeJLabels(0,s);
+    	s = s+gui.getName(x) + "'s points: "+playersScore[x];
+    	gui.changeJLabels(x,s);
+
     }
     
     
@@ -221,7 +220,7 @@ public class GameManagerNormal extends GameManager {
 			winner.winsPairsOf2();
 			db.updateData(winner);
 		}
-    	gui.changeJLabels(1, "The game is over");
+    	gui.changeJLabels(2, "The game is over");
     	try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e1) {}

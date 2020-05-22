@@ -56,9 +56,7 @@ public class Highscores extends AppCompatActivity {
             //code below is used to experiment with database
             db.addPlayer("Cheat", 1000, 1000, 1000);
             db.deleteAllData();
-            db.addPlayer("Dimosthenis", 45, 400, 300);
-            db.addPlayer("Maria", 32, 45, 45);
-            db.addPlayer("Thanos", 36, 20, 9);
+            db.checkPlayer("GGWP");
 
 
             Player P1 = db.findHighestPairsOfTwoWinsPlayer();

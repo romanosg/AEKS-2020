@@ -32,8 +32,12 @@
         <activity android:name="com.android.MemoryGameActivities.SelectionScreen" />
         <activity android:name="com.android.MemoryGameActivities.Highscores" />
         <activity android:name="com.android.MemoryGameActivities.findPlayerActivity" />
-        <activity android:name="com.android.MemoryGameActivities.BattleActivity" />
-        <activity android:name="com.android.MemoryGameActivities.NormalActivity" />
+        <activity
+            android:name="com.android.MemoryGameActivities.BattleActivity"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name="com.android.MemoryGameActivities.NormalActivity"
+            android:screenOrientation="nosensor" />
     </application>
 
 </manifest>

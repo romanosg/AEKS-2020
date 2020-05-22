@@ -106,7 +106,7 @@ a.runOnUiThread(new Runnable() {
     @Override
     public void run() {
 
-labelsArray[1].setText("It is " + player[x-1] + "'s turn");
+labelsArray[2].setText("It is " + player[x-1] + "'s turn");
 
     }
 });

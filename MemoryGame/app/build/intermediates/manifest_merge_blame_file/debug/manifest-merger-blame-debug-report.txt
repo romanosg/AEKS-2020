@@ -11,7 +11,7 @@
 9-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:5:5-27:19
+11-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:5:5-33:19
 12        android:allowBackup="true"
 12-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -58,12 +58,18 @@
 33        <activity android:name="com.android.MemoryGameActivities.findPlayerActivity" />
 33-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:24:9-97
 33-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:24:19-85
-34        <activity android:name="com.android.MemoryGameActivities.BattleActivity" />
-34-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:25:9-93
-34-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:25:19-81
-35        <activity android:name="com.android.MemoryGameActivities.NormalActivity" />
-35-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:26:9-93
-35-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:26:19-81
-36    </application>
-37
-38</manifest>
+34        <activity
+34-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:25:9-28:25
+35            android:name="com.android.MemoryGameActivities.BattleActivity"
+35-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:26:13-75
+36            android:screenOrientation="nosensor" />
+36-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:27:13-49
+37        <activity
+37-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:29:9-32:25
+38            android:name="com.android.MemoryGameActivities.NormalActivity"
+38-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:30:13-75
+39            android:screenOrientation="nosensor" />
+39-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:31:13-49
+40    </application>
+41
+42</manifest>
