@@ -7,8 +7,8 @@ import android.os.Bundle;
 
 import android.util.Log;
 import android.view.View;
+import com.android.R;
 
-import com.memory_game.app.R;
 // the main and startup activity of the app. It shows the basic options
 public class MainActivity extends AppCompatActivity {
 

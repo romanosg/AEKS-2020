@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.android.R;
 import com.android.BackEnd.Learner;
-import com.memory_game.app.R;
 
 //activity that gives the option regarding gamemode
 public class ModeSelection extends AppCompatActivity {

@@ -11,7 +11,8 @@ import android.content.Context;
 import com.android.BackEnd.AndroidGui;
 import com.android.BackEnd.GameManagers.GameManagerMod8;
 import com.android.Database.DBHandler;
-import com.memory_game.app.R;
+import com.android.R;
+
 
 //This activity starts a game of battle mod. It uses the battle layout which is different than the normal layout and the layout for the 3 cards mode.
 public class BattleActivity extends Activity {
@@ -83,8 +84,10 @@ int num_buttons = 28;
 
     //Initiates the buttons (cards)
     protected Button[] buttons(){
+
         Button[] buttonsArray = new Button[num_buttons];
     	for(int i =0;i<num_buttons;i++){
+    	    Log.d(null, "card "+ (i+1) + ": " + (R.id.b_card01+i) + " and " + (R.id.b_card15+i-14));
     		if(i<14)buttonsArray[i] = (Button) findViewById(R.id.b_card01+i);
                 else buttonsArray[i] = (Button) findViewById(R.id.b_card15+i-14);
     		buttonsArray[i].setBackgroundResource(R.drawable.back_cover);

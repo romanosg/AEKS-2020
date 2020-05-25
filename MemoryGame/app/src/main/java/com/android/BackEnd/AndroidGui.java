@@ -6,9 +6,9 @@ import android.widget.TextView;
 import android.view.View;
 
 import com.android.Database.Player;
-import com.memory_game.app.R;
 
 import com.android.BackEnd.GameManagers.GameManagerNormal;
+import com.android.R;
 
 //This class implements the gui, it changes the android's components like the buttons and the labels. Every change of those elements has to
 //happen through this class in order to happen on the thread that has the permission to alter the view components.
@@ -56,8 +56,8 @@ String[] player;
 protected void handleEvent(View v) {
         int id = v.getId();
     	if(!battle && normal){
-            this.openCard(id-R.id.card01);//Integer.parseInt(s));
-    	    this.st(new Thread(new OpenCardR(this, id-R.id.card01, open_card)));
+            this.openCard(id- R.id.card01);//Integer.parseInt(s));
+    	    this.st(new Thread(new OpenCardR(this, id- R.id.card01, open_card)));
         }
         else if(!battle && !normal){
             this.openCard(id-R.id.card_3_01);//Integer.parseInt(s));

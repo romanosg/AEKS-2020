@@ -11,9 +11,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.android.R;
 import com.android.Database.DBHandler;
 import com.android.Database.Player;
-import com.memory_game.app.R;
 
 import org.w3c.dom.Text;
 

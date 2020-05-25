@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.content.Context;
 
+import com.android.R;
 import com.android.BackEnd.GameManagers.GameManagerNormal;
 import com.android.BackEnd.GameManagers.GameManagerMod4;
 import com.android.Database.DBHandler;
-import com.memory_game.app.R;
 import com.android.BackEnd.AndroidGui;
 
 //This activity starts a game with either normal mode or 3cards mode.

@@ -15,10 +15,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.R;
 import com.android.BackEnd.Learner;
 import com.android.BackEnd.Sector;
 import com.android.Database.Player;
-import com.memory_game.app.R;
 import com.android.Database.DBHandler;
 import com.android.Database.Player;
 

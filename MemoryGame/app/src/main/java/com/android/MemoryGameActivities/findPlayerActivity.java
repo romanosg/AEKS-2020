@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.android.Database.DBHandler;
 import com.android.Database.Player;
-import com.memory_game.app.R;
+import com.android.R;
 
 //the activity of findplayer that is used to find the data of a player in the database
 public class findPlayerActivity extends AppCompatActivity {

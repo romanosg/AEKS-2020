@@ -1,5 +1,7 @@
 package com.android.BackEnd.GameManagers;
 
+import android.util.Log;
+
 import java.util.Random;
 import com.android.BackEnd.Bots.*;
 import com.android.BackEnd.AndroidGui;
@@ -80,7 +82,7 @@ public class GameManagerMod8 extends GameManagerNormal{
 	    	if(counter==1){
 	    		x1=cardNumber;
 	    		fold_card=x1;
-                        gui.openCard(x1);
+	    		gui.openCard(x1);
 	    		gui.unClicableButtons(x1);
 	    		if(playerCounter==1){
 	    			gui.openP2buttons();
@@ -102,7 +104,7 @@ public class GameManagerMod8 extends GameManagerNormal{
 		    			playerCounter=4;
 		    		}
 		    		else {
-                                        gui.closeP2buttons();
+		    			gui.closeP2buttons();
 		    			gui.openP1buttons();
 		    			gui.changeJLabels(2, "Now " + gui.getName(0) + " picks first");
 		    			playerCounter=1;
@@ -120,7 +122,7 @@ public class GameManagerMod8 extends GameManagerNormal{
 		    		else playerCounter=2;
 		    		}
 		    		else if(playerCounter==2){
-		    			gui.changeJLabels(2, "Now " + gui.getName(1) + " picks first");
+					gui.changeJLabels(2, "Now " + gui.getName(1) + " picks first");
 		    			playerCounter=3;
 		    		}
 		    		else if(playerCounter==3) {

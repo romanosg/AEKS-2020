@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.memory_game.app.R;
+import com.android.R;
 
 //activity that shows the rules of the game modes
 public class rulesPage extends AppCompatActivity {
