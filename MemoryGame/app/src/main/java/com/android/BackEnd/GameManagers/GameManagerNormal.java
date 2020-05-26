@@ -8,6 +8,8 @@ package com.android.BackEnd.GameManagers;
 import java.util.Random;
 import com.android.BackEnd.Bots.*;
 import com.android.BackEnd.AndroidGui;
+import com.android.Database.DBHandler;
+import com.android.Database.Player;
 
 /**
  * Αυτή η κλάση ελέγχει τη λογική του παιχνιδιού.
@@ -37,7 +39,8 @@ public class GameManagerNormal extends GameManager {
 	static char botLvl[];
 	static int moves=0;
 	public static boolean click = true;
-	
+	static DBHandler db;
+
 	
     /**
      * Ελέγχει αν ο μετρητής είναι 2 και σε περίπτωση που είναι δύο, τότε
@@ -55,7 +58,7 @@ public class GameManagerNormal extends GameManager {
     return false;
 }
     
-    public static void InitGameManager(AndroidGui gui,int numberOfPlayersvar,int numberOfBotsvar, int numberOfCardsvar,char... botLvlvar){
+    public static void InitGameManager(AndroidGui gui, DBHandler dbhandler, int numberOfPlayersvar,int numberOfBotsvar, int numberOfCardsvar,char... botLvlvar){
     	numberOfPlayers = numberOfPlayersvar;
     	numberOfBots = numberOfBotsvar;
     	botLvl = botLvlvar;
@@ -164,10 +167,9 @@ public class GameManagerNormal extends GameManager {
     	int x = moves%numberOfPlayers;
     	playersScore[x]++;
     	String s="";
-    	for(int i=0;i<numberOfPlayers;i++){
-    		s = s+"Player"+(i+1)+"'s score: "+playersScore[i]+"   \n";
-    	}
-    	gui.changeJLabels(0,s);
+    	s = s+gui.getName(x) + "'s points: "+playersScore[x];
+    	gui.changeJLabels(x,s);
+
     }
     
     
@@ -209,11 +211,22 @@ public class GameManagerNormal extends GameManager {
     }
     
     protected static void GameOver(AndroidGui gui){
-    	gui.changeJLabels(1, "The game is over");
+		if(playersScore[0]>playersScore[1]){
+			Player winner = db.checkPlayer(gui.getName(0));
+			winner.winsPairsOf2();
+			db.updateData(winner);
+		}else if((playersScore[1]>playersScore[0])&&numberOfBots==0){
+			Player winner = db.checkPlayer(gui.getName(1));
+			winner.winsPairsOf2();
+			db.updateData(winner);
+		}
+    	gui.changeJLabels(2, "The game is over");
     	try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e1) {}
     	gui.gameEnd();
     }
+
+
     	
 }

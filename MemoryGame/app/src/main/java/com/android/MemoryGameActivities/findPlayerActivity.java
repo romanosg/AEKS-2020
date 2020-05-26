@@ -8,8 +8,9 @@ import android.widget.TextView;
 
 import com.android.Database.DBHandler;
 import com.android.Database.Player;
-import com.memory_game.app.R;
+import com.android.R;
 
+//the activity of findplayer that is used to find the data of a player in the database
 public class findPlayerActivity extends AppCompatActivity {
 
     TextView infoLabel;
@@ -18,6 +19,7 @@ public class findPlayerActivity extends AppCompatActivity {
     TextView battleWins;
     TextView textView;
 
+    //creating the activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,7 @@ public class findPlayerActivity extends AppCompatActivity {
 
         }
 
+    //restoring the data if activity is destroyed
     @Override protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         CharSequence infoText = infoLabel.getText();
@@ -66,15 +69,18 @@ public class findPlayerActivity extends AppCompatActivity {
     }
 
 
+    //functionality of the findplayer button. Displays the data from DB if player is found
     public void findPlayer(View view){
         DBHandler db = new DBHandler(this, null, null, 1);
         Player player = db.findPlayer(textView.getText().toString());
         if(player!=null){
+            //player found
             infoLabel.setText("Player Found");
             pairsOf2Wins.setText("" + player.getPairsOf2Wins());
             pairsOf3Wins.setText("" + player.getPairsOf3Wins());
             battleWins.setText("" + player.getBattleWins());
         }else{
+            //player not found
             infoLabel.setText("Player not Found");
             pairsOf2Wins.setText("-");
             pairsOf3Wins.setText("-");
@@ -82,10 +88,12 @@ public class findPlayerActivity extends AppCompatActivity {
         }
     }
 
+    //functionality of the button of deleteplayer button. Deletes a player from DB if found
     public void deletePlayer(View view){
         DBHandler db = new DBHandler(this, null, null, 1);
         Player player = db.findPlayer(textView.getText().toString());
         if(player!=null){
+            //player found
             db.deletePlayer(textView.getText().toString());
             infoLabel.setText(player.getName() + "'s Data Deleted");
             pairsOf2Wins.setText("-");
@@ -93,6 +101,7 @@ public class findPlayerActivity extends AppCompatActivity {
             battleWins.setText("-");
 
         }else{
+            //player not found
             infoLabel.setText("Player not Found");
             pairsOf2Wins.setText("-");
             pairsOf3Wins.setText("-");
@@ -100,6 +109,7 @@ public class findPlayerActivity extends AppCompatActivity {
         }
     }
 
+    //fuctionality of back button that returns to the previous activity
     public void exit(View view){
         onBackPressed();
     }

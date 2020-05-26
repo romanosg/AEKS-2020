@@ -5,9 +5,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
 
-import com.memory_game.app.R;
+import com.android.Database.Player;
 
 import com.android.BackEnd.GameManagers.GameManagerNormal;
+import com.android.R;
 
 //This class implements the gui, it changes the android's components like the buttons and the labels. Every change of those elements has to
 //happen through this class in order to happen on the thread that has the permission to alter the view components.
@@ -22,11 +23,12 @@ Activity a;
 boolean battle;
 char open_card;
 boolean normal;
+String[] player;
 
    //Constructor, it requires the initiated labels and buttons as well the number of the buttons. The activity is recuired in order to gain
    //access to the guiThread. Boolean battle specidies if the game is of the battle mode and char open_card is a specific character for each
    //mode. Finally normal flag specifies if the game is normal mode or not.
-   public AndroidGui(TextView[] labelsArray, int num_buttons, Button[] buttonsArray, Activity a, boolean battle, char open_card, boolean normal){
+   public AndroidGui(String[] playerName, TextView[] labelsArray, int num_buttons, Button[] buttonsArray, Activity a, boolean battle, char open_card, boolean normal){
        this.labelsArray = labelsArray;
        this.num_buttons = num_buttons;
        this.buttonsArray = buttonsArray;
@@ -34,6 +36,7 @@ boolean normal;
        this.battle = battle;
        this.open_card = open_card;
        this.normal = normal;
+       player = playerName;
        for(int i =0;i<num_buttons;i++){
     		this.buttonsArray[i].setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -44,12 +47,17 @@ boolean normal;
     		}
    }
 
+   //this function gets the name of the person based of the index given
+    public String getName(int index){
+       return player[index];
+    }
+
 //This function is triggered when a card is selected, it flips the card and handles the calling of the thread that controls the closing of the cards
 protected void handleEvent(View v) {
         int id = v.getId();
     	if(!battle && normal){
-            this.openCard(id-R.id.card01);//Integer.parseInt(s));
-    	    this.st(new Thread(new OpenCardR(this, id-R.id.card01, open_card)));
+            this.openCard(id- R.id.card01);//Integer.parseInt(s));
+    	    this.st(new Thread(new OpenCardR(this, id- R.id.card01, open_card)));
         }
         else if(!battle && !normal){
             this.openCard(id-R.id.card_3_01);//Integer.parseInt(s));
@@ -98,7 +106,7 @@ a.runOnUiThread(new Runnable() {
     @Override
     public void run() {
 
-labelsArray[1].setText("It is player"+x+"'s turn");
+labelsArray[2].setText("It is " + player[x-1] + "'s turn");
 
     }
 });

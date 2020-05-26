@@ -11,7 +11,7 @@
 9-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:5:5-26:19
+11-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:5:5-31:19
 12        android:allowBackup="true"
 12-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -26,40 +26,50 @@
 18-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:9:9-54
 19        android:supportsRtl="true"
 19-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:10:9-35
-20        android:theme="@style/AppTheme" >
-20-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:11:9-40
-21        <activity android:name="com.android.MemoryGameActivities.MainActivity" >
-21-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:14:9-19:20
-21-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:14:19-79
-22            <intent-filter>
-22-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:15:13-18:25
-23                <action android:name="android.intent.action.MAIN" />
-23-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:16:13-65
-23-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:16:21-62
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:17:13-73
-25-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:17:23-70
-26            </intent-filter>
-27        </activity>
-28        <activity android:name="com.android.MemoryGameActivities.ModeSelection" />
-28-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:20:9-92
-28-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:20:19-80
-29        <activity android:name="com.android.MemoryGameActivities.Rules" />
-29-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:21:9-84
-29-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:21:19-72
-30        <activity android:name="com.android.MemoryGameActivities.SelectionScreen" />
-30-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:22:9-94
-30-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:22:19-82
-31        <activity android:name="com.android.MemoryGameActivities.Highscores" />
-31-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:23:9-89
-31-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:23:19-77
-32        <activity android:name="com.android.MemoryGameActivities.findPlayerActivity" />
-32-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:24:9-97
-32-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:24:19-85
-33        <activity android:name="com.android.MemoryGameActivities.PairsOfTwoCardsActivity" />
-33-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:25:9-102
-33-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:25:19-90
-34    </application>
-35
-36</manifest>
+20        android:testOnly="true"
+21        android:theme="@style/AppTheme" >
+21-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:11:9-40
+22        <activity android:name="com.android.MemoryGameActivities.MainActivity" >
+22-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:14:9-19:20
+22-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:14:19-79
+23            <intent-filter>
+23-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:15:13-18:25
+24                <action android:name="android.intent.action.MAIN" />
+24-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:16:13-65
+24-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:16:21-62
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:17:13-73
+26-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:17:23-70
+27            </intent-filter>
+28        </activity>
+29        <activity android:name="com.android.MemoryGameActivities.ModeSelection" />
+29-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:20:9-83
+29-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:20:19-80
+30        <activity android:name="com.android.MemoryGameActivities.rulesPage" />
+30-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:21:9-79
+30-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:21:19-76
+31        <activity android:name="com.android.MemoryGameActivities.SelectionScreen" />
+31-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:22:9-85
+31-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:22:19-82
+32        <activity android:name="com.android.MemoryGameActivities.Highscores" />
+32-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:23:9-80
+32-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:23:19-77
+33        <activity android:name="com.android.MemoryGameActivities.findPlayerActivity" />
+33-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:24:9-88
+33-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:24:19-85
+34        <activity
+34-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:25:9-27:52
+35            android:name="com.android.MemoryGameActivities.BattleActivity"
+35-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:26:13-75
+36            android:screenOrientation="nosensor" />
+36-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:27:13-49
+37        <activity
+37-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:28:9-30:52
+38            android:name="com.android.MemoryGameActivities.NormalActivity"
+38-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:29:13-75
+39            android:screenOrientation="nosensor" />
+39-->C:\Users\georg\AndroidStudioProjects\AEKS-2020\MemoryGame\app\src\main\AndroidManifest.xml:30:13-49
+40    </application>
+41
+42</manifest>

@@ -11,12 +11,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.android.R;
 import com.android.Database.DBHandler;
 import com.android.Database.Player;
-import com.memory_game.app.R;
 
 import org.w3c.dom.Text;
 
+
+//activity regarding the highscores of players on each mode
 public class Highscores extends AppCompatActivity {
 
     TextView P1tv;
@@ -54,9 +56,7 @@ public class Highscores extends AppCompatActivity {
             //code below is used to experiment with database
             db.addPlayer("Cheat", 1000, 1000, 1000);
             db.deleteAllData();
-            db.addPlayer("Dimosthenis", 45, 400, 300);
-            db.addPlayer("Maria", 32, 45, 45);
-            db.addPlayer("Thanos", 36, 20, 9);
+            db.checkPlayer("GGWP");
 
 
             Player P1 = db.findHighestPairsOfTwoWinsPlayer();
@@ -81,6 +81,7 @@ public class Highscores extends AppCompatActivity {
         }
     }
 
+    //saving the data upon destruction of activity
     @Override protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         CharSequence P1tvText = P1tv.getText();

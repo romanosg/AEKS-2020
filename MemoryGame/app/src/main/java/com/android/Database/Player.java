@@ -1,11 +1,13 @@
 package com.android.Database;
 
+//class that represents the player: The data that are being deposited into the detabase
 public class Player {
     private String name;
     private int pairsOf2Wins;
     private int pairsOf3Wins;
     private int battleWins;
 
+    //constructor of initializing a new player
     public Player(String name){
         this.name = name;
         pairsOf2Wins = 0;
@@ -13,6 +15,7 @@ public class Player {
         battleWins = 0;
     }
 
+    //constructor of initializing an existing from database player by giving him his updated wins
     public Player(String name, int pairsOf2Wins, int pairsOf3Wins, int battleWins){
         this.name = name;
         this.pairsOf2Wins = pairsOf2Wins;
@@ -20,6 +23,7 @@ public class Player {
         this.battleWins = battleWins;
     }
 
+    //getters
     public int getBattleWins() {
         return battleWins;
     }
@@ -36,6 +40,7 @@ public class Player {
         return name;
     }
 
+    //setters
     public void setBattleWins(int battleWins) {
         this.battleWins = battleWins;
     }
@@ -52,6 +57,7 @@ public class Player {
         this.pairsOf3Wins = pairsOf3Wins;
     }
 
+    //increments of wins
     public void winsPairsOf2() {pairsOf2Wins++;}
 
     public void winsPairsOf3() {pairsOf3Wins++;}
