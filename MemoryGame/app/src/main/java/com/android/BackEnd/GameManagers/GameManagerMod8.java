@@ -1,8 +1,8 @@
-package com.android.BackEnd.GameManagers;
+package com.memory_game.app.GameManagers;
 
 import java.util.Random;
-import com.android.BackEnd.Bots.*;
-import com.android.BackEnd.AndroidGui;
+import com.memory_game.app.Bots.*;
+import com.memory_game.app.AndroidGui;
 
 public class GameManagerMod8 extends GameManagerNormal{
 	static int playerCounter;
@@ -89,6 +89,10 @@ public class GameManagerMod8 extends GameManagerNormal{
 		    		else playerCounter=2;
 		    		}
 		    		else if(playerCounter==2){
+                                        if(numberOfBots==0){
+                                            gui.openP2buttons();
+		    		            gui.closeP1buttons();
+                                        }
 		    			gui.changeJLabels(1, "Now Player2 picks first");
 		    			playerCounter=3;
 		    		}
@@ -117,6 +121,10 @@ public class GameManagerMod8 extends GameManagerNormal{
 		    		else playerCounter=2;
 		    		}
 		    		else if(playerCounter==2){
+                                        if(numberOfBots==0){
+                                            gui.openP2buttons();
+		    		            gui.closeP1buttons();
+                                        }
 		    			gui.changeJLabels(1, "Now Player2 picks first");
 		    			playerCounter=3;
 		    		}
@@ -141,7 +149,8 @@ public class GameManagerMod8 extends GameManagerNormal{
 	    		closeCard(gui,x1);
 	    		closeCard(gui,x2);
 	    		moves++;
-	    		gui.openP1buttons();
+	    		if(playerCounter == 1 || playerCounter==4)gui.openP1buttons();
+                        else if(numberOfBots==0)gui.openP2buttons();
 	    		click = true;
 	    		//WhoseTurn(gui);
 	    		/*if(moves%numberOfPlayers>(numberOfPlayers-numberOfBots-1) && numberOfBots!=0){
@@ -152,7 +161,8 @@ public class GameManagerMod8 extends GameManagerNormal{
 	    		gui.unClicableButtons(x2);
 	    		PairFound(gui, playerCounter);
                         gui.rmButtons(x1,x2);
-                        gui.openP1buttons();
+                        if(playerCounter == 1 || playerCounter==4)gui.openP1buttons();
+                        else if(numberOfBots==0)gui.openP2buttons();
 	    		if(numberOfBots!=0){
 	    			if(playerCounter==1 || playerCounter==4){
 	    				clickedButtonsB(x1);
