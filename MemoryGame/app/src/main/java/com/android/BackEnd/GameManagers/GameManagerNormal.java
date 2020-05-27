@@ -167,7 +167,7 @@ public class GameManagerNormal extends GameManager {
     	int x = moves%numberOfPlayers;
     	playersScore[x]++;
     	String s="";
-    	s = s+gui.getName(x) + "'s points: "+playersScore[x];
+    	s = s+gui.getName(x) + ": " +playersScore[x];
     	gui.changeJLabels(x,s);
 
     }

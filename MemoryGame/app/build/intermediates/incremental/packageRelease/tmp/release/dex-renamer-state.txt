@@ -1,0 +1,4 @@
+#Tue May 26 16:30:32 EEST 2020
+base.0=C\:\\Users\\georg\\AndroidStudioProjects\\AEKS-2020\\MemoryGame\\app\\build\\intermediates\\dex\\release\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

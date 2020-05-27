@@ -70,7 +70,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
     //method that creates a row of fixed data about an imaginary player for experimentation.
     public void addPlayer(String name, int num1, int num2, int num3) {
-       // if (findPlayer(name) !=null) {
             ContentValues values = new ContentValues();
             values.put(COLUMN_NAME, name);
             values.put(COLUMN_PAIRSOF2WINS, num1);
@@ -79,7 +78,7 @@ public class DBHandler extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getWritableDatabase();
             db.insert(TABLE_PLAYERS, null, values);
             db.close();
-        //}
+
     }
 
 
@@ -146,18 +145,18 @@ public class DBHandler extends SQLiteOpenHelper {
     //method that finds the players with the highest pairs of 2 wins.
     //For multiple results, the result table is being randomized and the first element is selected.
     public Player findHighestPairsOfTwoWinsPlayer(){
-        String query = "SELECT name, MAX(" + COLUMN_PAIRSOF2WINS + ") FROM " + TABLE_PLAYERS
+            String query = "SELECT name, MAX(" + COLUMN_PAIRSOF2WINS + ") FROM " + TABLE_PLAYERS
                 + " ORDER BY RANDOM()";
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(query, null);
             Player player = new Player("");
-            if (cursor.moveToFirst()) {
+            if (cursor.moveToFirst() && (cursor.getString(0)!=null)) {
                 cursor.moveToFirst();
                 player.setName(cursor.getString(0));
                 player.setPairsOf2Wins(Integer.parseInt(cursor.getString(1)));
                 cursor.close();
             }
-            else { player = null; }
+            else {player = null; }
             db.close();
             return player;
     }
@@ -170,7 +169,7 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         Player player = new Player("");
-        if (cursor.moveToFirst()) {
+        if (cursor.moveToFirst() && cursor.getString(0)!=null) {
             cursor.moveToFirst();
             player.setName(cursor.getString(0));
             player.setPairsOf3Wins(Integer.parseInt(cursor.getString(1)));
@@ -191,7 +190,7 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         Player player = new Player("");
-        if (cursor.moveToFirst()) {
+        if (cursor.moveToFirst() && cursor.getString(0)!=null) {
             cursor.moveToFirst();
             player.setName(cursor.getString(0));
             player.setBattleWins(Integer.parseInt(cursor.getString(1)));

@@ -1,14 +1,15 @@
-package com.memory_game.app.GameManagers;
+package com.android.BackEnd.GameManagers;
 
 import android.util.Log;
 
 import java.util.Random;
 import com.android.BackEnd.Bots.*;
 import com.android.BackEnd.AndroidGui;
+import com.android.BackEnd.GameManagers.GameManagerNormal;
 import com.android.Database.DBHandler;
 import com.android.Database.Player;
 
-public class GameManagerMod8 extends GameManagerNormal{
+public class GameManagerMod8 extends GameManagerNormal {
 	static int playerCounter;
 	
 	public static void InitGameManager(AndroidGui gui, DBHandler dbhandler, int numberOfPlayersvar, int numberOfBotsvar, int numberOfCardsvar, char... botLvlvar){
@@ -199,7 +200,7 @@ public class GameManagerMod8 extends GameManagerNormal{
 	    	}
 	    	//playersScore[x]++;
 	    	String s="";
-		 	s = s+gui.getName(x) + "'s points: "+playersScore[x];
+		 	s = s+gui.getName(x) + ": " +playersScore[x];
 		 	gui.changeJLabels(x,s);
 	    }
 

@@ -75,8 +75,8 @@ int num_buttons = 28;
         labelsArray[2] = (TextView) findViewById(R.id.b_text3);
 
 
-        labelsArray[0].setText(player1 + "'s points: 0");
-	    labelsArray[1].setText(player2 + "'s points: 0");
+        labelsArray[0].setText(player1 + ": " + 0);
+	    labelsArray[1].setText(player2 + ": " + 0);
         labelsArray[2].setText(player1 + "picks a card");
 
         return labelsArray;
@@ -87,7 +87,6 @@ int num_buttons = 28;
 
         Button[] buttonsArray = new Button[num_buttons];
     	for(int i =0;i<num_buttons;i++){
-    	    Log.d(null, "card "+ (i+1) + ": " + (R.id.b_card01+i) + " and " + (R.id.b_card15+i-14));
     		if(i<14)buttonsArray[i] = (Button) findViewById(R.id.b_card01+i);
                 else buttonsArray[i] = (Button) findViewById(R.id.b_card15+i-14);
     		buttonsArray[i].setBackgroundResource(R.drawable.back_cover);
